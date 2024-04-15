@@ -4,11 +4,11 @@
     <div class="container">
       <div class="left">
         <el-menu :default-active="curRoute" background-color="transpant" text-color="#fff" style="border-right: none;">
-          <el-menu-item index="/home" @click="changeRoute('home')">
+          <el-menu-item index="#/home" @click="changeRoute('home')">
             <el-icon><HomeFilled /></el-icon>
             <span>首页</span>
           </el-menu-item>
-          <el-menu-item index="/common" @click="changeRoute('common')">
+          <el-menu-item index="#/common" @click="changeRoute('common')">
             <el-icon><Menu /></el-icon>
             <span>常用链接</span>
           </el-menu-item>
@@ -54,7 +54,7 @@ import { ref } from 'vue'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 const router = useRouter();
 
-const curRoute = location.pathname
+const curRoute = location.hash
 
 const changeRoute = (path) => {
   router.push({path})
