@@ -1,6 +1,6 @@
 <template>
-  <div class="common">
-    <div class="content">
+  <div class="common-overview general-conainer">
+    <div class="content general-content">
       <div style="margin-top: 36px;width: 100%;padding: 18px; border: 3px solid white;box-sizing: border-box;">
         <div style="font-size: 30px;margin-bottom: 18px">数据库</div>
         <el-button type="primary" @click="gotoUrl('http://db.nfuwow.com/85/?items')">装备</el-button>
@@ -30,14 +30,8 @@ const gotoUrl = (url) => {
 </script>
 
 <style lang="scss" scoped>
-.common{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  overflow-y: auto;
+.common-overview{
   .content {
-    width: 720px;
   }
 }
 </style>
