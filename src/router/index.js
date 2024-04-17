@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import CommonOverview from '../views/common/CommonOverview.vue'
 import CommonItems from '../views/common/CommonItems.vue'
@@ -58,7 +58,8 @@ import RaidFirelands from '../views/raid/RaidFirelands.vue'
 import RaidDragonSoul from '../views/raid/RaidDragonSoul.vue'
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  // history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory('/'),
   routes: [
     {
       path: '/',

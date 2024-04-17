@@ -72,7 +72,7 @@ import { ref } from 'vue'
 import { RouterLink, RouterView, useRouter } from 'vue-router'
 const router = useRouter();
 
-const curRoute = location.hash.slice(2) || 'home'
+const curRoute = location.pathname.slice(1) || 'home'
 
 const changeRoute = (path) => {
   router.push({path})
@@ -164,7 +164,7 @@ const menuItems = {
     height: 100%;
     display: flex;
     .left {
-      width: 260px;
+      width: 230px;
       height: 100%;
       border-right: 1px solid #666;
     }

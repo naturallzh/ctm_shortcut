@@ -1,7 +1,5 @@
-const test = () => {
-    console.log(123)
-  }
+import common from './common'
 
 export default {
-    test
+    ...common
 }
