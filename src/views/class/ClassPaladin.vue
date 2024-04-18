@@ -1,46 +1,38 @@
 <template>
   <div class="class-paladin general-conainer" ref="containerRef">
-    <div class="content general-content">
+    <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
-      <div class="fs-30 fw-b mt-18" id="overview">
-        总览
-        <div style="width: 100px;height: 500px;background-color: yellow"></div>
-      </div>
-      <div class="fs-30 fw-b mt-18" id="overview-intro">简介</div>
-      <div class="fs-30 fw-b mt-18" id="overview-leveling">
-        练级
-        <div style="width: 100px;height: 500px;background-color: yellow"></div>
-      </div>
-      <div class="fs-30 fw-b mt-18" id="protection">
-        防御
-        <div style="width: 100px;height: 500px;background-color: yellow"></div>
-      </div>
-      <div class="fs-30 fw-b mt-18" id="protection-overview">综述</div>
-      <div class="fs-30 fw-b mt-18" id="protection-stat">综述</div>
-      <div class="fs-30 fw-b mt-18" id="protection-talentGlyphSkill">天赋 雕文 专业</div>
-      <div class="fs-30 fw-b mt-18" id="protection-battleItems">战前物资</div>
-      <div class="fs-30 fw-b mt-18" id="protection-keyEquipments">重点装备</div>
-      <div class="fs-30 fw-b mt-18" id="protection-operation">操作要点</div>
-      <div class="fs-30 fw-b mt-18" id="holy">
-        神圣
-        <div style="width: 100px;height: 500px;background-color: yellow"></div>
-      </div>
-      <div class="fs-30 fw-b mt-18" id="holy-overview">综述</div>
-      <div class="fs-30 fw-b mt-18" id="holy-stat">综述</div>
-      <div class="fs-30 fw-b mt-18" id="holy-talentGlyphSkill">天赋 雕文 专业</div>
-      <div class="fs-30 fw-b mt-18" id="holy-battleItems">战前物资</div>
-      <div class="fs-30 fw-b mt-18" id="holy-keyEquipments">重点装备</div>
-      <div class="fs-30 fw-b mt-18" id="holy-operation">操作要点</div>
-      <div class="fs-30 fw-b mt-18" id="retribution">
-        惩戒
-        <div style="width: 100px;height: 500px;background-color: yellow"></div>
-      </div>
-      <div class="fs-30 fw-b mt-18" id="retribution-overview">综述</div>
-      <div class="fs-30 fw-b mt-18" id="retribution-stat">综述</div>
-      <div class="fs-30 fw-b mt-18" id="retribution-talentGlyphSkill">天赋 雕文 专业</div>
-      <div class="fs-30 fw-b mt-18" id="retribution-battleItems">战前物资</div>
-      <div class="fs-30 fw-b mt-18" id="retribution-keyEquipments">重点装备</div>
-      <div class="fs-30 fw-b mt-18" id="retribution-operation">操作要点</div>
+      <div class="title-1" id="intro">简介</div>
+      <div class="title-1" id="leveling">练级</div>
+
+      <div class="title-1" id="protection">防御</div>
+      <div class="title-2" id="protection-overview">综述</div>
+      <div class="title-2" id="protection-stat">属性</div>
+      <div style="width: 100px;height: 2000px;background-color: yellow;"></div>
+      <div class="title-2" id="protection-talentGlyphSkill">天赋 雕文 专业</div>
+      <div class="title-2" id="protection-battleItems">战前物资</div>
+      <div class="title-2" id="protection-keyEquipments">重点装备</div>
+      <div class="title-2" id="protection-addonsMacros">插件 宏</div>
+      <div class="title-2" id="protection-operation">操作要点</div>
+
+      <div class="title-1" id="holy">神圣</div>
+      <div class="title-2" id="holy-overview">综述</div>
+      <div class="title-2" id="holy-stat">属性</div>
+      <div class="content"></div>
+      <div class="title-2" id="holy-talentGlyphSkill">天赋 雕文 专业</div>
+      <div class="title-2" id="holy-battleItems">战前物资</div>
+      <div class="title-2" id="holy-keyEquipments">重点装备</div>
+      <div class="title-2" id="holy-addonsMacros">插件 宏</div>
+      <div class="title-2" id="holy-operation">操作要点</div>
+
+      <div class="title-1" id="retribution">惩戒</div>
+      <div class="title-2" id="retribution-overview">综述</div>
+      <div class="title-2" id="retribution-stat">属性</div>
+      <div class="title-2" id="retribution-talentGlyphSkill">天赋 雕文 专业</div>
+      <div class="title-2" id="retribution-battleItems">战前物资</div>
+      <div class="title-2" id="retribution-keyEquipments">重点装备</div>
+      <div class="title-2" id="retribution-addonsMacros">插件 宏</div>
+      <div class="title-2" id="retribution-operation">操作要点</div>
     </div>
   </div>
 </template>
@@ -55,13 +47,8 @@ const anchorParams = ref({
     container: containerRef
   },
   children: [
-    { 
-      href: '#overview', title: '总览',
-      subs: [
-        { href: '#overview-intro', title: '简介' },
-        { href: '#overview-leveling', title: '练级' }
-      ]
-    },
+    { href: '#intro', title: '简介' },
+    { href: '#leveling', title: '练级' },
     { 
       href: '#protection', title: '防御',
       subs: [
@@ -70,6 +57,7 @@ const anchorParams = ref({
         { href: '#protection-talentGlyphSkill', title: '天赋 雕文 专业' },
         { href: '#protection-battleItems', title: '战前物资' },
         { href: '#protection-keyEquipments', title: '重点装备' },
+        { href: '#protection-addonsMacros', title: '插件 宏' },
         { href: '#protection-operation', title: '操作要点' },
       ]
     },
@@ -81,6 +69,7 @@ const anchorParams = ref({
         { href: '#holy-talentGlyphSkill', title: '天赋 雕文 专业' },
         { href: '#holy-battleItems', title: '战前物资' },
         { href: '#holy-keyEquipments', title: '重点装备' },
+        { href: '#holy-addonsMacros', title: '插件 宏' },
         { href: '#holy-operation', title: '操作要点' },
       ]
     },
@@ -92,6 +81,7 @@ const anchorParams = ref({
         { href: '#retribution-talentGlyphSkill', title: '天赋 雕文 专业' },
         { href: '#retribution-battleItems', title: '战前物资' },
         { href: '#retribution-keyEquipments', title: '重点装备' },
+        { href: '#retribution-addonsMacros', title: '插件 宏' },
         { href: '#retribution-operation', title: '操作要点' },
       ]
     },
@@ -101,7 +91,7 @@ const anchorParams = ref({
 
 <style lang="scss" scoped>
 .class-paladin{
-  .content {
+  .inner {
   }
 }
 </style>

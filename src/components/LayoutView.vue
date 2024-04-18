@@ -49,8 +49,7 @@
                 <el-icon><Cpu /></el-icon>
                 <span>计算器</span>
               </template>
-              <el-menu-item index="calc-1">测试1</el-menu-item>
-              <el-menu-item index="calc-2">测试2</el-menu-item>
+              <el-menu-item v-for="(item, index) of menuItems.calc" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
             </el-sub-menu>
           </el-menu>
         </el-scrollbar>
@@ -82,6 +81,8 @@ const menuItems = {
   common: [
     { id: 'common-overview', name: '总览' },
     { id: 'common-items', name: '物品' },
+    { id: 'common-addons', name: '插件' },
+    { id: 'common-macros', name: '宏' },
     { id: 'common-outfits', name: '套装' },
     { id: 'common-quests', name: '任务' },
     { id: 'common-achievements', name: '成就' },
@@ -140,6 +141,9 @@ const menuItems = {
     { id: 'raid-theBastionOfTwilight', name: '暮光堡垒' },
     { id: 'raid-firelands', name: '火焰之地' },
     { id: 'raid-dragonSoul', name: '巨龙之魂' },
+  ],
+  calc: [
+    { id: 'calc-gem', name: '珠宝' },
   ]
 }
 </script>

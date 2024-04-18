@@ -2,6 +2,8 @@ import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router
 import Home from '../views/Home.vue'
 import CommonOverview from '../views/common/CommonOverview.vue'
 import CommonItems from '../views/common/CommonItems.vue'
+import CommonAddons from '../views/common/CommonAddons.vue'
+import CommonMacros from '../views/common/CommonMacros.vue'
 import CommonOutfits from '../views/common/CommonOutfits.vue'
 import CommonQuests from '../views/common/CommonQuests.vue'
 import CommonAchievements from '../views/common/CommonAchievements.vue'
@@ -57,6 +59,8 @@ import RaidTheBastionOfTwilight from '../views/raid/RaidTheBastionOfTwilight.vue
 import RaidFirelands from '../views/raid/RaidFirelands.vue'
 import RaidDragonSoul from '../views/raid/RaidDragonSoul.vue'
 
+import CalcGem from '../views/calculator/CalcGem.vue'
+
 const router = createRouter({
   // history: createWebHashHistory(import.meta.env.BASE_URL),
   history: createWebHistory('/'),
@@ -72,6 +76,8 @@ const router = createRouter({
     },
     { path: '/common-overview', name: 'common-overview', component: CommonOverview },
     { path: '/common-items', name: 'common-items', component: CommonItems },
+    { path: '/common-addons', name: 'common-addons', component: CommonAddons },
+    { path: '/common-macros', name: 'common-macros', component: CommonMacros },
     { path: '/common-outfits', name: 'common-outfits', component: CommonOutfits },
     { path: '/common-quests', name: 'common-quests', component: CommonQuests },
     { path: '/common-achievements', name: 'common-achievements', component: CommonAchievements },
@@ -126,6 +132,8 @@ const router = createRouter({
     { path: '/raid-theBastionOfTwilight', name: 'raid-theBastionOfTwilight', component: RaidTheBastionOfTwilight },
     { path: '/raid-firelands', name: 'raid-firelands', component: RaidFirelands },
     { path: '/raid-dragonSoul', name: 'raid-dragonSoul', component: RaidDragonSoul },
+
+    { path: '/calc-gem', name: 'calc-gem', component: CalcGem },
   ]
 })
 
