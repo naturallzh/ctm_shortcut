@@ -4,27 +4,24 @@
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="nameSearch">名称速查</div>
       <div class="title-2">普通宝石</div>
-      <div class="mt-9">选择一种颜色或属性后查看匹配结果</div>
-      <div class="mt-9" style="padding: 0 9px; border: 2px solid red;display: inline-block">
-        <el-radio v-for="(item, index) of nameSearchOptions.red" v-model="nameSearchVal" :value="item.value" style="color: white;">{{ item.label }}</el-radio>
-      </div><br>
-      <div class="mt-9" style="padding: 0 9px; border: 2px solid yellow;display: inline-block">
-        <el-radio v-for="(item, index) of nameSearchOptions.yellow" v-model="nameSearchVal" :value="item.value" style="color: white;">{{ item.label }}</el-radio>
-      </div><br>
-      <div class="mt-9" style="padding: 0 9px; border: 2px solid rgb(28, 173, 249);display: inline-block">
-        <el-radio v-for="(item, index) of nameSearchOptions.blue" v-model="nameSearchVal" :value="item.value" style="color: white;">{{ item.label }}</el-radio>
-      </div><br>
-      <div v-show="nameSearchRes" class="mt-9">点击宝石名称以复制</div>
-      <div v-if="nameSearchRes" class="mt-9" style="display: flex;">
-        <div v-for="color of ['Red', 'Yellow', 'Blue', 'Orange', 'Purple', 'Green']" v-show="nameSearchRes[color].length" class="name-search-res-container" :class="color+'-border'">
-          <div v-for="gemItem of nameSearchRes[color]" class="gem-line">
-            <div class="stat-str">
-              <div @click="utils.copyToclipboard(gemItem.statName)" class="copy-str">{{ gemItem.statName }}</div>
-              <div>{{ gemItem.statStr }}</div>
-            </div>
-            <div class="gem-item" v-for="idx of [0, 1, 2]">
-              <div @click="utils.copyToclipboard(gemItem.statName+gemStone[color][idx])" class="copy-str">{{ gemStone[color][idx] }}</div><div>{{ gemStatVal[gemItem.statValType][idx] }}</div>
-            </div>
+      <div class="mt-9">选择一种属性后查看匹配结果</div>
+      <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
+      <div class="mt-18 gem-radio-group" :class="index" v-for="(colorGroup, index) of nameSearchOptions">
+        <div class="gem-item" v-for="item of colorGroup">
+          <div><el-radio v-model="nameSearchVal" :value="item.value" style="color: white;" @change="handleSearchChange">{{ item.label }}</el-radio></div>
+          <div style="height: 28px;">
+            <el-popover placement="right" width="460px">
+              <template #reference>
+                <el-button v-show="item.res" size="large" style="color: wheat;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName)">{{ item.res?.statName }}</el-button>
+              </template>
+              <div style="display: flex;">
+                <div class="mr-18">{{ item.res?.statStr }}</div>
+                <div style="display: flex;flex-direction: column;" v-for="spec of [0, 1, 2]" class="mr-18">
+                  <el-button size="large" style="color: black;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName + gemStone[item.res?.color||'Red'][spec])">{{ item.res?.statName + gemStone[item.res?.color||'Red'][spec] }}</el-button>
+                  <span>{{ gemStatVal[item.res?.statValType||0][spec] }}</span>
+                </div>
+              </div>
+            </el-popover>
           </div>
         </div>
       </div>
@@ -48,31 +45,28 @@ const anchorParams = ref({
 })
 
 const nameSearchVal = ref('')
-const nameSearchOptions = {
+const nameSearchOptions = ref({
   red: [
-    { value: 'Red', label: '红色' },
     { value: 'Str', label: '力量' },
     { value: 'Agi', label: '敏捷' },
     { value: 'Int', label: '智力' },
     { value: 'Parry', label: '精准' },
     { value: 'Pre', label: '招架' }
   ],
-  blue: [
-    { value: 'Blue', label: '蓝色' },
-    { value: 'Sta', label: '耐力' },
-    { value: 'Hit', label: '命中' },
-    { value: 'Spi', label: '精神' },
-    { value: 'Pene', label: '法穿' },
-  ],
   yellow: [
-    { value: 'Yellow', label: '黄色' },
     { value: 'Crit', label: '暴击' },
     { value: 'Haste', label: '急速' },
     { value: 'Mast', label: '精通' },
     { value: 'Dodge', label: '躲闪' },
     { value: 'Res', label: '韧性' },
+  ],
+  blue: [
+    { value: 'Sta', label: '耐力' },
+    { value: 'Hit', label: '命中' },
+    { value: 'Spi', label: '精神' },
+    { value: 'Pene', label: '法穿' },
   ]
-}
+})
 const gemStatVal = [
   ['30', '40', '50'],  // 0
   ['15/15', '20/20', '25/25'],  // 1
@@ -82,22 +76,22 @@ const gemStatVal = [
   ['38', '50', '63'],  // 5
 ]
 const gemStatDataList = [
-  { color: 'Red', stat: 'Str', statStr: '力量', statValType: 0, statName: '朴素' },
-  { color: 'Red', stat: 'Agi', statStr: '敏捷', statValType: 0, statName: '精致' },
-  { color: 'Red', stat: 'Int', statStr: '智力', statValType: 0, statName: '闪耀' },
-  { color: 'Red', stat: 'Parry', statStr: '精准', statValType: 0, statName: '精准' },
-  { color: 'Red', stat: 'Pre', statStr: '招架', statValType: 0, statName: '闪光' },
+  { color: 'Red', stat: 'StrStr', statStr: '力量', statValType: 0, statName: '朴素' },
+  { color: 'Red', stat: 'AgiAgi', statStr: '敏捷', statValType: 0, statName: '精致' },
+  { color: 'Red', stat: 'IntInt', statStr: '智力', statValType: 0, statName: '闪耀' },
+  { color: 'Red', stat: 'ParryParry', statStr: '精准', statValType: 0, statName: '精准' },
+  { color: 'Red', stat: 'PrePre', statStr: '招架', statValType: 0, statName: '闪光' },
 
-  { color: 'Blue', stat: 'Sta', statStr: '耐力', statValType: 4, statName: '致密' },
-  { color: 'Blue', stat: 'Hit', statStr: '命中', statValType: 0, statName: '刚硬' },
-  { color: 'Blue', stat: 'Spi', statStr: '精神', statValType: 0, statName: '火花' },
-  { color: 'Blue', stat: 'Pene', statStr: '法穿', statValType: 5, statName: '致密' },
+  { color: 'Blue', stat: 'StaSta', statStr: '耐力', statValType: 4, statName: '致密' },
+  { color: 'Blue', stat: 'HitHit', statStr: '命中', statValType: 0, statName: '刚硬' },
+  { color: 'Blue', stat: 'SpiSpi', statStr: '精神', statValType: 0, statName: '火花' },
+  { color: 'Blue', stat: 'PenePene', statStr: '法穿', statValType: 5, statName: '风暴' },
 
-  { color: 'Yellow', stat: 'Crit', statStr: '暴击', statValType: 0, statName: '圆润' },
-  { color: 'Yellow', stat: 'Haste', statStr: '急速', statValType: 0, statName: '迅捷' },
-  { color: 'Yellow', stat: 'Mast', statStr: '精通', statValType: 0, statName: '断裂' },
-  { color: 'Yellow', stat: 'Dodge', statStr: '躲闪', statValType: 0, statName: '诡秘' },
-  { color: 'Yellow', stat: 'Res', statStr: '韧性', statValType: 0, statName: '秘法' },
+  { color: 'Yellow', stat: 'CritCrit', statStr: '暴击', statValType: 0, statName: '圆润' },
+  { color: 'Yellow', stat: 'HasteHaste', statStr: '急速', statValType: 0, statName: '迅捷' },
+  { color: 'Yellow', stat: 'MastMast', statStr: '精通', statValType: 0, statName: '断裂' },
+  { color: 'Yellow', stat: 'DodgeDodge', statStr: '躲闪', statValType: 0, statName: '诡秘' },
+  { color: 'Yellow', stat: 'ResRes', statStr: '韧性', statValType: 0, statName: '秘法' },
 
   { color: 'Purple', stat: 'AgiHit', statStr: '敏捷命中', statValType: 1, statName: '反光' },
   { color: 'Purple', stat: 'ParryHit', statStr: '精准命中', statValType: 1, statName: '精确' },
@@ -162,56 +156,39 @@ const gemStone = {
   Orange: ['桂榴石', '暗烬黄玉', '熔火珊瑚'],
   Green: ['碧玉', '梦境翡翠', '精灵榄石']
 }
-const nameSearchRes = computed(() => {
+const getGem = (stat) => {
   if (!nameSearchVal.value) { return false }
-  const res = { Red: [], Blue: [], Yellow: [], Purple: [], Orange: [], Green: [] }
-  const fitColor = (clr1, clr2) => {
-    if (clr1 === 'Red') { return (clr2 === 'Red') || (clr2 === 'Purple') || (clr2 === 'Orange') }
-    if (clr1 === 'Blue') { return (clr2 === 'Blue') || (clr2 === 'Purple') || (clr2 === 'Green') }
-    if (clr1 === 'Yellow') { return (clr2 === 'Yellow') || (clr2 === 'Green') || (clr2 === 'Orange') }
-    return false
-  }
   for (const item of gemStatDataList) {
-    if (fitColor(nameSearchVal.value, item.color) || item.stat.includes(nameSearchVal.value)) {
-      res[item.color].push(item)
+    if ((item.stat === nameSearchVal.value + stat) || (item.stat === stat + nameSearchVal.value)) {
+      return item
     }
   }
-  return res
-})
+  return false
+}
+const handleSearchChange = (val) => {
+  for (const color of ['red', 'yellow', 'blue']) {
+    for (const item of nameSearchOptions.value[color]) {
+      item.res = getGem(item.value)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
 .calc-gem{
   .inner {
-    .name-search-res-container {
-      margin-right: 9px;
-      padding: 9px;
+    .gem-radio-group {
+      padding: 0 9px;
       display: flex;
-      flex-direction: column;
-      width: 391px;
-      box-sizing: border-box;
-      .gem-line {
-        margin: 9px 0;
+      .gem-item {
         display: flex;
-        .stat-str {
-          width: 83px;
-          flex-shrink: 0;
-        }
-        .gem-item {
-          display: flex;
-          flex-direction: column;
-          flex-grow: 1;
-        }
-        .copy-str {
-            cursor: pointer;
-            transition: color, 0.3s;
-          }
-          .copy-str:hover {
-            color: rgb(28, 173, 249);
-            transition: color, 0.3s;
-          }
+        flex-direction: column;
+        width: 100px;
       }
     }
+    .red { border-left: 3px solid red; }
+    .yellow { border-left: 3px solid yellow; }
+    .blue { border-left: 3px solid rgb(28, 173, 249); }
     .Red-border {border: 2px solid red;}
     .Yellow-border {border: 2px solid yellow;}
     .Blue-border {border: 2px solid rgb(28, 173, 249);}
