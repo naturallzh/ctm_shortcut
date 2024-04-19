@@ -18,9 +18,12 @@
       <div v-if="nameSearchRes" class="mt-9" style="display: flex;">
         <div v-for="color of ['Red', 'Yellow', 'Blue', 'Orange', 'Purple', 'Green']" v-show="nameSearchRes[color].length" class="name-search-res-container" :class="color+'-border'">
           <div v-for="gemItem of nameSearchRes[color]" class="gem-line">
-            <div class="stat-str">{{ gemItem.statStr }}</div>
+            <div class="stat-str">
+              <div @click="utils.copyToclipboard(gemItem.statName)" class="copy-str">{{ gemItem.statName }}</div>
+              <div>{{ gemItem.statStr }}</div>
+            </div>
             <div class="gem-item" v-for="idx of [0, 1, 2]">
-              <div @click="utils.copyToclipboard(gemItem.statName+gemStone[color][idx])" class="gem-name">{{ gemItem.statName+gemStone[color][idx] }}</div><div>{{ gemStatVal[gemItem.statValType][idx] }}</div>
+              <div @click="utils.copyToclipboard(gemItem.statName+gemStone[color][idx])" class="copy-str">{{ gemStone[color][idx] }}</div><div>{{ gemStatVal[gemItem.statValType][idx] }}</div>
             </div>
           </div>
         </div>
@@ -191,23 +194,22 @@ const nameSearchRes = computed(() => {
         margin: 9px 0;
         display: flex;
         .stat-str {
-          width: 73px;
+          width: 83px;
           flex-shrink: 0;
         }
         .gem-item {
           display: flex;
           flex-direction: column;
           flex-grow: 1;
-          font-size: 14px;
-          .gem-name {
+        }
+        .copy-str {
             cursor: pointer;
             transition: color, 0.3s;
           }
-          .gem-name:hover {
+          .copy-str:hover {
             color: rgb(28, 173, 249);
             transition: color, 0.3s;
           }
-        }
       }
     }
     .Red-border {border: 2px solid red;}
