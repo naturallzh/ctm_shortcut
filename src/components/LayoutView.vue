@@ -144,6 +144,7 @@ const menuItems = {
   ],
   calc: [
     { id: 'calc-gem', name: '珠宝' },
+    { id: 'calc-raid', name: '团队配置' },
   ]
 }
 </script>

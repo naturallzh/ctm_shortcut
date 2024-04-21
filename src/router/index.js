@@ -60,6 +60,7 @@ import RaidFirelands from '../views/raid/RaidFirelands.vue'
 import RaidDragonSoul from '../views/raid/RaidDragonSoul.vue'
 
 import CalcGem from '../views/calculator/CalcGem.vue'
+import CalcRaid from '../views/calculator/CalcRaid.vue'
 
 const router = createRouter({
   // history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -134,6 +135,7 @@ const router = createRouter({
     { path: '/raid-dragonSoul', name: 'raid-dragonSoul', component: RaidDragonSoul },
 
     { path: '/calc-gem', name: 'calc-gem', component: CalcGem },
+    { path: '/calc-raid', name: 'calc-raid', component: CalcRaid },
   ]
 })
 
