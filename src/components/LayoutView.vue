@@ -23,12 +23,12 @@
               </template>
               <el-menu-item v-for="(item, index) of menuItems.class" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
             </el-sub-menu>
-            <el-sub-menu index="skill">
+            <el-sub-menu index="prof">
               <template #title>
                 <el-icon><Menu /></el-icon>
                 <span>专业</span>
               </template>
-              <el-menu-item v-for="(item, index) of menuItems.skill" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
+              <el-menu-item v-for="(item, index) of menuItems.prof" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
             </el-sub-menu>
             <el-sub-menu index="dungeon">
               <template #title>
@@ -83,6 +83,7 @@ const menuItems = {
     { id: 'common-items', name: '物品' },
     { id: 'common-addons', name: '插件' },
     { id: 'common-macros', name: '宏' },
+    { id: 'common-factions', name: '声望' },
     { id: 'common-outfits', name: '套装' },
     { id: 'common-quests', name: '任务' },
     { id: 'common-achievements', name: '成就' },
@@ -100,23 +101,23 @@ const menuItems = {
     { id: 'class-shaman', name: '萨满' },
     { id: 'class-deathknight', name: '死亡骑士' },
   ],
-  skill: [
-    { id: 'skill-overview', name: '总览' },
-    { id: 'skill-herbalism', name: '草药学' },
-    { id: 'skill-alchemy', name: '炼金术' },
-    { id: 'skill-inscription', name: '铭文' },
-    { id: 'skill-mining', name: '采矿' },
-    { id: 'skill-blacksmithing', name: '锻造' },
-    { id: 'skill-engineering', name: '工程学' },
-    { id: 'skill-jewelcrafting', name: '珠宝加工' },
-    { id: 'skill-skining', name: '剥皮' },
-    { id: 'skill-leatherworking', name: '制皮' },
-    { id: 'skill-tailoring', name: '裁缝' },
-    { id: 'skill-encharting', name: '附魔' },
-    { id: 'skill-archaeology', name: '考古学' },
-    { id: 'skill-cooking', name: '烹饪' },
-    { id: 'skill-firstAid', name: '急救' },
-    { id: 'skill-fishing', name: '钓鱼' },
+  prof: [
+    { id: 'prof-overview', name: '总览' },
+    { id: 'prof-herbalism', name: '草药学' },
+    { id: 'prof-alchemy', name: '炼金术' },
+    { id: 'prof-inscription', name: '铭文' },
+    { id: 'prof-mining', name: '采矿' },
+    { id: 'prof-blacksmithing', name: '锻造' },
+    { id: 'prof-engineering', name: '工程学' },
+    { id: 'prof-jewelcrafting', name: '珠宝加工' },
+    { id: 'prof-skining', name: '剥皮' },
+    { id: 'prof-leatherworking', name: '制皮' },
+    { id: 'prof-tailoring', name: '裁缝' },
+    { id: 'prof-encharting', name: '附魔' },
+    { id: 'prof-archaeology', name: '考古学' },
+    { id: 'prof-cooking', name: '烹饪' },
+    { id: 'prof-firstAid', name: '急救' },
+    { id: 'prof-fishing', name: '钓鱼' },
   ],
   dungeon: [
     { id: 'dungeon-overview', name: '总览' },

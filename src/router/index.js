@@ -4,6 +4,7 @@ import CommonOverview from '../views/common/CommonOverview.vue'
 import CommonItems from '../views/common/CommonItems.vue'
 import CommonAddons from '../views/common/CommonAddons.vue'
 import CommonMacros from '../views/common/CommonMacros.vue'
+import CommonFactions from '../views/common/CommonFactions.vue'
 import CommonOutfits from '../views/common/CommonOutfits.vue'
 import CommonQuests from '../views/common/CommonQuests.vue'
 import CommonAchievements from '../views/common/CommonAchievements.vue'
@@ -20,22 +21,22 @@ import ClassDruid from '../views/class/ClassDruid.vue'
 import ClassShaman from '../views/class/ClassShaman.vue'
 import ClassDeathknight from '../views/class/ClassDeathknight.vue'
 
-import SkillOverview from '../views/skill/SkillOverview.vue'
-import SkillHerbalism from '../views/skill/SkillHerbalism.vue'
-import SkillAlchemy from '../views/skill/SkillAlchemy.vue'
-import SkillInscription from '../views/skill/SkillInscription.vue'
-import SkillMining from '../views/skill/SkillMining.vue'
-import SkillBlacksmithing from '../views/skill/SkillBlacksmithing.vue'
-import SkillEngineering from '../views/skill/SkillEngineering.vue'
-import SkillJewelcrafting from '../views/skill/SkillJewelcrafting.vue'
-import SkillSkining from '../views/skill/SkillSkining.vue'
-import SkillLeatherworking from '../views/skill/SkillLeatherworking.vue'
-import SkillTailoring from '../views/skill/SkillTailoring.vue'
-import SkillEncharting from '../views/skill/SkillEncharting.vue'
-import SkillArchaeology from '../views/skill/SkillArchaeology.vue'
-import SkillCooking from '../views/skill/SkillCooking.vue'
-import SkillFirstAid from '../views/skill/SkillFirstAid.vue'
-import SkillFishing from '../views/skill/SkillFishing.vue'
+import ProfOverview from '../views/prof/ProfOverview.vue'
+import ProfHerbalism from '../views/prof/ProfHerbalism.vue'
+import ProfAlchemy from '../views/prof/ProfAlchemy.vue'
+import ProfInscription from '../views/prof/ProfInscription.vue'
+import ProfMining from '../views/prof/ProfMining.vue'
+import ProfBlacksmithing from '../views/prof/ProfBlacksmithing.vue'
+import ProfEngineering from '../views/prof/ProfEngineering.vue'
+import ProfJewelcrafting from '../views/prof/ProfJewelcrafting.vue'
+import ProfSkining from '../views/prof/ProfSkining.vue'
+import ProfLeatherworking from '../views/prof/ProfLeatherworking.vue'
+import ProfTailoring from '../views/prof/ProfTailoring.vue'
+import ProfEncharting from '../views/prof/ProfEncharting.vue'
+import ProfArchaeology from '../views/prof/ProfArchaeology.vue'
+import ProfCooking from '../views/prof/ProfCooking.vue'
+import ProfFirstAid from '../views/prof/ProfFirstAid.vue'
+import ProfFishing from '../views/prof/ProfFishing.vue'
 
 import DungeonOverview from '../views/dungeon/DungeonOverview.vue'
 import DungeonThroneOfTheTides from '../views/dungeon/DungeonThroneOfTheTides.vue'
@@ -79,6 +80,7 @@ const router = createRouter({
     { path: '/common-items', name: 'common-items', component: CommonItems },
     { path: '/common-addons', name: 'common-addons', component: CommonAddons },
     { path: '/common-macros', name: 'common-macros', component: CommonMacros },
+    { path: '/common-factions', name: 'common-factions', component: CommonFactions },
     { path: '/common-outfits', name: 'common-outfits', component: CommonOutfits },
     { path: '/common-quests', name: 'common-quests', component: CommonQuests },
     { path: '/common-achievements', name: 'common-achievements', component: CommonAchievements },
@@ -95,22 +97,22 @@ const router = createRouter({
     { path: '/class-shaman', name: 'class-shaman', component: ClassShaman },
     { path: '/class-deathknight', name: 'class-deathknight', component: ClassDeathknight },
 
-    { path: '/skill-overview', name: 'skill-overview', component: SkillOverview },
-    { path: '/skill-herbalism', name: 'skill-herbalism', component: SkillHerbalism },
-    { path: '/skill-alchemy', name: 'skill-alchemy', component: SkillAlchemy },
-    { path: '/skill-inscription', name: 'skill-inscription', component: SkillInscription },
-    { path: '/skill-mining', name: 'skill-mining', component: SkillMining },
-    { path: '/skill-blacksmithing', name: 'skill-blacksmithing', component: SkillBlacksmithing },
-    { path: '/skill-engineering', name: 'skill-engineering', component: SkillEngineering },
-    { path: '/skill-jewelcrafting', name: 'skill-jewelcrafting', component: SkillJewelcrafting },
-    { path: '/skill-skining', name: 'skill-skining', component: SkillSkining },
-    { path: '/skill-leatherworking', name: 'skill-leatherworking', component: SkillLeatherworking },
-    { path: '/skill-tailoring', name: 'skill-tailoring', component: SkillTailoring },
-    { path: '/skill-encharting', name: 'skill-encharting', component: SkillEncharting },
-    { path: '/skill-archaeology', name: 'skill-archaeology', component: SkillArchaeology },
-    { path: '/skill-cooking', name: 'skill-cooking', component: SkillCooking },
-    { path: '/skill-firstAid', name: 'skill-firstAid', component: SkillFirstAid },
-    { path: '/skill-fishing', name: 'skill-fishing', component: SkillFishing },
+    { path: '/prof-overview', name: 'prof-overview', component: ProfOverview },
+    { path: '/prof-herbalism', name: 'prof-herbalism', component: ProfHerbalism },
+    { path: '/prof-alchemy', name: 'prof-alchemy', component: ProfAlchemy },
+    { path: '/prof-inscription', name: 'prof-inscription', component: ProfInscription },
+    { path: '/prof-mining', name: 'prof-mining', component: ProfMining },
+    { path: '/prof-blacksmithing', name: 'prof-blacksmithing', component: ProfBlacksmithing },
+    { path: '/prof-engineering', name: 'prof-engineering', component: ProfEngineering },
+    { path: '/prof-jewelcrafting', name: 'prof-jewelcrafting', component: ProfJewelcrafting },
+    { path: '/prof-skining', name: 'prof-skining', component: ProfSkining },
+    { path: '/prof-leatherworking', name: 'prof-leatherworking', component: ProfLeatherworking },
+    { path: '/prof-tailoring', name: 'prof-tailoring', component: ProfTailoring },
+    { path: '/prof-encharting', name: 'prof-encharting', component: ProfEncharting },
+    { path: '/prof-archaeology', name: 'prof-archaeology', component: ProfArchaeology },
+    { path: '/prof-cooking', name: 'prof-cooking', component: ProfCooking },
+    { path: '/prof-firstAid', name: 'prof-firstAid', component: ProfFirstAid },
+    { path: '/prof-fishing', name: 'prof-fishing', component: ProfFishing },
 
     { path: '/dungeon-overview', name: 'dungeon-overview', component: DungeonOverview },
     { path: '/dungeon-throneOfTheTides', name: 'dungeon-throneOfTheTides', component: DungeonThroneOfTheTides },
