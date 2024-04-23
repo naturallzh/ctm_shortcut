@@ -22,7 +22,7 @@
             <el-button type="danger" class="ml-9">清空</el-button>
           </template>
         </el-popconfirm>
-        (<el-icon style="color: rgb(24, 180, 24)"><Select /></el-icon>表示需要此BUFF且团队提供, <el-icon style="color: red"><Close /></el-icon>表示需要此BUFF但团队不提供, - 表示不需要此BUFF)
+        (<el-icon style="color: rgb(24, 180, 24)"><Select /></el-icon>表示需要此BUFF且团队提供, <el-icon style="color: red"><Close /></el-icon>表示需要此BUFF但团队不提供, - 表示不需要此BUFF, * 表示团队无此BUFF但有队员可开启)
       </div>
       <div class="buff-res-container">
         <div class="buff-list">
@@ -37,7 +37,7 @@
               <span v-for="classItem of classList" style="padding: 0 3px;" v-show="classItem.passive.includes(buffIdx)||classItem.conflict[buffIdx]">{{ classItem.name }}</span>
               <div v-if="buffItem.desc" style="color: red">*注：{{ buffItem.desc }}</div>
               <template #reference>
-                <span>{{ buffItem.name }}</span>
+                <span>{{ buffItem.name }}<span v-show="ableToEnable(buffIdx)">*</span></span>
               </template>
             </el-popover>
           </div>
@@ -142,6 +142,10 @@ const confirmOpen = (mem, buffIdx) => {
 const confirmClose = (mem, buffIdx) => {
   const idx = mem.provide.indexOf(buffIdx)
   mem.provide.splice(idx, 1)
+  if (mem.id.includes('pal-') && (buffIdx === 6 || buffIdx === 18)) {
+    const idx2 = mem.provide.indexOf(24 - buffIdx)
+    mem.provide.splice(idx2, 1)
+  }
   processBuff()
 }
 const handleSort = () => {
@@ -195,6 +199,14 @@ const classList = [
   { id: 'dk-2', name: '冰DK', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [4, 5, 8], conflict: {}, desc: '', count: 0 },
   { id: 'dk-3', name: '邪DK', role: 'd1', require: [0,1,2,3,4,5,6,7,8,11,12,13,14,15,16], passive: [4,12], conflict: {}, desc: '', count: 0 },
 ]
+
+const ableToEnable = (buffIdx) => {
+  if (buffListRes.value[buffIdx]?.enabled) { return false }
+  for (const mem of group) {
+    if (mem.passive.includes(buffIdx) || mem.conflict[buffIdx]) { return true }
+  }
+  return false
+}
 
 </script>
 
