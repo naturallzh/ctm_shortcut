@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown split-button type="primary" @click="handleClick('nfu')">
+  <el-dropdown split-button size="small" type="primary" @click="handleClick('nfu')">
     {{ name }}
     <template #dropdown>
       <el-dropdown-menu>
@@ -40,7 +40,7 @@ init()
 
 const handleClick = (target) => {
   if (url.value[target]) {
-    window.open(url.value[target], '_blank')
+    utils.openUrl(url.value[target])
   }
 }
 </script>

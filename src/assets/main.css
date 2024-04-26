@@ -41,10 +41,12 @@ html, body {
 .fs-24 {font-size: 24px;}
 .fs-25 {font-size: 25px;}
 .fw-b {font-weight: bold;}
-clr-w {color: white;}
-clr-r {color: red;}
-clr-g {color: green;}
-clr-b {color: blue;}
+.clr-w {color: white;}
+.clr-r {color: red;}
+.clr-g {color: green;}
+.clr-b {color: blue;}
+.clr-y {color: yellow;}
+.clr-o {color: orange;}
 
 .mt-9 {margin-top: 9px;}
 .mr-9 {margin-right: 9px;}
@@ -67,6 +69,22 @@ clr-b {color: blue;}
 .pl-18 {padding-left: 18px;}
 .p-9 {padding: 9px;}
 .p-18 {padding: 18px;}
+
+.wd-25 {width: 25px;}
+.wd-50 {width: 50px;}
+.wd-75 {width: 75px;}
+.wd-100 {width: 100px;}
+.wd-125 {width: 125px;}
+.wd-150 {width: 150px;}
+.wd-175 {width: 175px;}
+.wd-200 {width: 200px;}
+
+.fs-i {font-style: italic;}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
 
 .general-conainer {
   width: 100%;
@@ -92,5 +110,15 @@ clr-b {color: blue;}
           font-weight: bold;
           margin-top: 18px;
       }
+      .title-3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 9px;
+    }
   }
+}
+
+.prof-skill-cost {
+  padding: 1px 3px;
+  border: 1px solid rgb(64, 158, 255);
 }

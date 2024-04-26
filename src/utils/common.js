@@ -8,6 +8,11 @@ const copyToclipboard = (val) => {
   })
 }
 
+const openUrl = (url, target = '_blank') => {
+  window.open(url, target)
+}
+
 export default {
-  copyToclipboard
+  copyToclipboard,
+  openUrl
 }

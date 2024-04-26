@@ -23,9 +23,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import utils from '@/utils'
 
 const gotoUrl = (url) => {
-  window.open(url, '_blank')
+  utils.openUrl(url)
 }
 </script>
 
