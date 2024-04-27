@@ -1,7 +1,7 @@
 <template>
   <div class="mt-9 flex-align-center item-container" v-for="item of dataArr">
     <span class="wd-100 fw-b clr-o">{{ item.range }}</span>
-    <span style="width: 135px">{{ item.name }}</span>
+    <span style="min-width: 135px">{{ item.name }}</span>
     <div class="prof-skill-cost mr-9">{{ item.cost }}</div>
     <DatabaseNav type="spell" :id="item.id" name="DB" class="mr-9"></DatabaseNav>
     <ProfSkillLevelStep :steps="item.steps" class="mr-18"></ProfSkillLevelStep>
