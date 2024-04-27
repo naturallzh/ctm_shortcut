@@ -3,8 +3,8 @@
     <span class="wd-100 fw-b clr-o">{{ item.range }}</span>
     <span style="min-width: 130px" class="mr-9">{{ item.name }}</span>
     <div class="prof-skill-cost mr-9">{{ item.cost }}</div>
-    <DatabaseNav type="spell" :id="item.id" name="DB" class="mr-9"></DatabaseNav>
-    <ProfSkillLevelStep :steps="item.steps" class="mr-18"></ProfSkillLevelStep>
+    <DatabaseNav v-if="item.id" type="spell" :id="item.id" name="DB" class="mr-9"></DatabaseNav>
+    <ProfSkillLevelStep v-if="item.steps.length" :steps="item.steps" class="mr-18"></ProfSkillLevelStep>
     <span v-show="item.notice">{{ item.notice }}</span>
   </div>
 </template>

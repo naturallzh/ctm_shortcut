@@ -32,8 +32,6 @@
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
       <div class="title-3" id="leveling-stage-7">大地的裂变</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage6" />
-
-      <div class="title-1" id="branch">分支专精</div>
     </div>
   </div>
 </template>
@@ -70,7 +68,6 @@ const anchorParams = ref({
         },
       ]
     },
-    { href: '#branch', title: '分支专精' },
   ]
 })
 
