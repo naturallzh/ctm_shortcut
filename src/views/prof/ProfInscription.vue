@@ -5,18 +5,25 @@
       <div class="title-1" id="intro">简介</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
-
-      <div class="title-2" id="leveling-main">冲级攻略</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>同类配方极多，可根据情况替换</div>
       <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://g.nga.cn/read.php?tid=4983628&_fp=25&rand=812')">[御前比武大会]4.3 铭文1-525</el-button>—— f77521881</div>
-      <div class="title-3" id="leveling-stage-1">经典旧世</div>
+      <div class="title-2" id="leveling-stage-1">经典旧世</div>
+      <div>乳白墨水：宁神花、银叶草、地根草</div>
+      <div>午夜墨水/猎人墨水：魔皇草、石南草、雨燕草、荆棘藻、跌打草</div>
+      <div>狮王墨水/晨星墨水：野钢花、墓地苔、皇血草、活根草</div>
+      <div>碧火墨水/皇家墨水：枯叶草、金棘草、卡德加的胡须、冬刺草</div>
+      <div>星空墨水/火焰墨水：火焰花、紫莲花、阿尔萨斯之泪、太阳草、盲目草、幽灵菇、格罗姆之血</div>
+      <div>幻光墨水/苍穹墨水：黄金参、梦叶草、山鼠草、瘟疫花、冰盖草</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage1" />
-      <div class="title-3" id="leveling-stage-3">燃烧的远征</div>
+      <div class="title-2" id="leveling-stage-3">燃烧的远征</div>
+      <div>虚灵墨水/黑焰墨水：魔草、梦露花、邪雾草、噩梦藤、泰罗果、虚空花、法力蓟、远古苔</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage2" />
-      <div class="title-3" id="leveling-stage-4">巫妖王之怒</div>
+      <div class="title-2" id="leveling-stage-4">巫妖王之怒</div>
+      <div>海洋墨水/落雪墨水：蛇信草、死亡荨麻、金苜蓿、冰棘草、巫妖花、塔兰德拉的玫瑰、卷丹</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage3" />
-      <div class="title-3" id="leveling-stage-5">大地的裂变</div>
+      <div class="title-2" id="leveling-stage-5">大地的裂变</div>
+      <div>秋闲墨水/炼狱墨水：燃烬草、艾萨拉雾菇、鞭尾草、暮光茉莉、风暴藤、心灵之花</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
     </div>
   </div>
@@ -38,19 +45,12 @@ const anchorParams = ref({
   children: [
     { href: '#intro', title: '简介' },
     { href: '#benifit', title: '收益' },
-    { 
-      href: '#leveling', title: '技能提升',
-      subs: [
-        { href: '#leveling-main', title: '冲级攻略',
-          subs: [
-            { href: '#leveling-stage-1', title: '经典旧世' },
-            { href: '#leveling-stage-2', title: '燃烧的远征' },
-            { href: '#leveling-stage-3', title: '巫妖王之怒' },
-            { href: '#leveling-stage-4', title: '大地的裂变' },
-          ]
-        },
-      ]
-    }
+    { href: '#leveling', title: '技能提升', subs: [
+      { href: '#leveling-stage-1', title: '经典旧世' },
+      { href: '#leveling-stage-2', title: '燃烧的远征' },
+      { href: '#leveling-stage-3', title: '巫妖王之怒' },
+      { href: '#leveling-stage-4', title: '大地的裂变' },
+    ]},
   ]
 })
 

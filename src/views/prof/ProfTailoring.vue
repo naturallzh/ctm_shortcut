@@ -5,7 +5,8 @@
       <div class="title-1" id="intro">简介</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
-
+      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4330970&rand=657')">​[御前比武大会]裁缝1-525</el-button>—— 暗之魔妃</div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="14627" name="图样：淡黄色衬衣" class="mr-9"></DatabaseNav>
@@ -19,29 +20,25 @@
         <ProfSkillLevelStep :steps="[215, 220, 225, 230]" class="mr-18"></ProfSkillLevelStep>
         来源：40-50左右世界掉落，多蹲蹲拍卖行
       </div>
-
-      <div class="title-2" id="leveling-main">冲级攻略</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4330970&rand=657')">​[御前比武大会]裁缝1-525</el-button>—— 暗之魔妃</div>
-      <div class="title-3" id="leveling-stage-1">亚麻布</div>
+      <div class="title-2" id="leveling-stage-1">亚麻布</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage1" />
-      <div class="title-3" id="leveling-stage-2">毛料</div>
+      <div class="title-2" id="leveling-stage-2">毛料</div>
       根据毛料和丝绸的价格决定是否尽快进入丝绸阶段
       <ProfSkillLevelItem :data-arr="levelingData.stage2" />
-      <div class="title-3" id="leveling-stage-3">丝绸</div>
+      <div class="title-2" id="leveling-stage-3">丝绸</div>
       根据丝绸和魔纹布的价格决定是否尽快进入魔纹布阶段 (通常魔纹布较贵)
       <ProfSkillLevelItem :data-arr="levelingData.stage3" />
-      <div class="title-3" id="leveling-stage-4">魔纹布</div>
+      <div class="title-2" id="leveling-stage-4">魔纹布</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
-      <div class="title-3" id="leveling-stage-5">符文布</div>
+      <div class="title-2" id="leveling-stage-5">符文布</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
-      <div class="title-3" id="leveling-stage-6">灵纹布</div>
+      <div class="title-2" id="leveling-stage-6">灵纹布</div>
       提前准备2组左右的结缔皮
       <ProfSkillLevelItem :data-arr="levelingData.stage6" />
-      <div class="title-3" id="leveling-stage-7">霜纹布</div>
+      <div class="title-2" id="leveling-stage-7">霜纹布</div>
       提前准备2组左右的无限之尘
       <ProfSkillLevelItem :data-arr="levelingData.stage7" />
-      <div class="title-3" id="leveling-stage-8">烬丝布</div>
+      <div class="title-2" id="leveling-stage-8">烬丝布</div>
       如果只需要裁缝福利可以先练到500，后面的慢慢靠点梦幻布升
       <ProfSkillLevelItem :data-arr="levelingData.stage8" />
 
@@ -70,18 +67,14 @@ const anchorParams = ref({
       href: '#leveling', title: '技能提升',
       subs: [
         { href: '#leveling-shortcut', title: '捷径配方' },
-        { href: '#leveling-main', title: '冲级攻略',
-          subs: [
-            { href: '#leveling-stage-1', title: '亚麻布' },
-            { href: '#leveling-stage-2', title: '毛料' },
-            { href: '#leveling-stage-3', title: '丝绸' },
-            { href: '#leveling-stage-4', title: '魔纹布' },
-            { href: '#leveling-stage-5', title: '符文布' },
-            { href: '#leveling-stage-6', title: '灵纹布' },
-            { href: '#leveling-stage-7', title: '霜纹布' },
-            { href: '#leveling-stage-8', title: '烬丝布' },
-          ]
-        },
+        { href: '#leveling-stage-1', title: '亚麻布' },
+        { href: '#leveling-stage-2', title: '毛料' },
+        { href: '#leveling-stage-3', title: '丝绸' },
+        { href: '#leveling-stage-4', title: '魔纹布' },
+        { href: '#leveling-stage-5', title: '符文布' },
+        { href: '#leveling-stage-6', title: '灵纹布' },
+        { href: '#leveling-stage-7', title: '霜纹布' },
+        { href: '#leveling-stage-8', title: '烬丝布' },
       ]
     },
     { href: '#branch', title: '分支专精' },

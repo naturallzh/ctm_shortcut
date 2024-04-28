@@ -5,7 +5,9 @@
       <div class="title-1" id="intro">简介</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
-
+      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div>切割宝石和项链/戒指制造存在大量同类配方，可根据情况替换</div>
+      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4320179&_fp=1&rand=862')">[御前比武大会] 珠宝1-525心得</el-button>—— 流浪的暮暮</div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="20854" name="图鉴：月之护符" class="mr-9"></DatabaseNav>
@@ -13,24 +15,19 @@
         <ProfSkillLevelStep :steps="[235, 255, 265, 275]" class="mr-18"></ProfSkillLevelStep>
         来源：达纳苏斯、埃索达、幽暗城、银月城商人出售
       </div>
-
-      <div class="title-2" id="leveling-main">冲级攻略</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
-      <div>切割宝石和项链/戒指制造存在大量同类配方，可根据情况替换</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4320179&_fp=1&rand=862')">[御前比武大会] 珠宝1-525心得</el-button>—— 流浪的暮暮</div>
-      <div class="title-3" id="leveling-stage-1">铜锭</div>
+      <div class="title-2" id="leveling-stage-1">铜锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage1" />
-      <div class="title-3" id="leveling-stage-3">秘银锭</div>
+      <div class="title-2" id="leveling-stage-3">秘银锭</div>
       秘银矿石主要出黄水晶、青绿石、红宝石，小概率出巨型绿宝石、大猫眼石、艾泽拉斯钻石
       <ProfSkillLevelItem :data-arr="levelingData.stage2" />
-      <div class="title-3" id="leveling-stage-4">瑟银锭</div>
+      <div class="title-2" id="leveling-stage-4">瑟银锭</div>
       瑟银矿石主要出巨型绿宝石、大猫眼石、艾泽拉斯钻石，小概率出红宝石
       <ProfSkillLevelItem :data-arr="levelingData.stage3" />
-      <div class="title-3" id="leveling-stage-5">燃烧的远征</div>
+      <div class="title-2" id="leveling-stage-5">燃烧的远征</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
-      <div class="title-3" id="leveling-stage-6">巫妖王之怒</div>
+      <div class="title-2" id="leveling-stage-6">巫妖王之怒</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
-      <div class="title-3" id="leveling-stage-7">大地的裂变</div>
+      <div class="title-2" id="leveling-stage-7">大地的裂变</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage6" />
     </div>
   </div>
@@ -56,16 +53,12 @@ const anchorParams = ref({
       href: '#leveling', title: '技能提升',
       subs: [
         { href: '#leveling-shortcut', title: '捷径配方' },
-        { href: '#leveling-main', title: '冲级攻略',
-          subs: [
-            { href: '#leveling-stage-1', title: '铜锭' },
-            { href: '#leveling-stage-2', title: '秘银锭' },
-            { href: '#leveling-stage-3', title: '瑟银锭' },
-            { href: '#leveling-stage-4', title: '燃烧的远征' },
-            { href: '#leveling-stage-5', title: '巫妖王之怒' },
-            { href: '#leveling-stage-6', title: '大地的裂变' },
-          ]
-        },
+        { href: '#leveling-stage-1', title: '铜锭' },
+        { href: '#leveling-stage-2', title: '秘银锭' },
+        { href: '#leveling-stage-3', title: '瑟银锭' },
+        { href: '#leveling-stage-4', title: '燃烧的远征' },
+        { href: '#leveling-stage-5', title: '巫妖王之怒' },
+        { href: '#leveling-stage-6', title: '大地的裂变' },
       ]
     },
   ]

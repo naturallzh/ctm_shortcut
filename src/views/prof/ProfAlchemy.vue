@@ -5,7 +5,9 @@
       <div class="title-1" id="intro">简介</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
-
+      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div>同类配方极多，可根据情况替换</div>
+      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4317927&_fp=1&rand=110')">[御前比武大会] 好像很多人写炼金，那么我也来，炼金1-525攻略</el-button>—— willforever</div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="6057" name="配方：自然防护药水" class="mr-9"></DatabaseNav>
@@ -19,18 +21,13 @@
         <ProfSkillLevelStep :steps="[340, 355, 362, 370]" class="mr-18"></ProfSkillLevelStep>
         来源：联盟-赞加沼泽泰雷多尔-海尔伦出售；部落-刀锋山雷神要塞-达加·拉姆巴出售
       </div>
-
-      <div class="title-2" id="leveling-main">冲级攻略</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
-      <div>同类配方极多，可根据情况替换</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4317927&_fp=1&rand=110')">[御前比武大会] 好像很多人写炼金，那么我也来，炼金1-525攻略</el-button>—— willforever</div>
-      <div class="title-3" id="leveling-stage-1">经典旧世</div>
+      <div class="title-2" id="leveling-stage-1">经典旧世</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage1" />
-      <div class="title-3" id="leveling-stage-3">燃烧的远征</div>
+      <div class="title-2" id="leveling-stage-3">燃烧的远征</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage2" />
-      <div class="title-3" id="leveling-stage-4">巫妖王之怒</div>
+      <div class="title-2" id="leveling-stage-4">巫妖王之怒</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage3" />
-      <div class="title-3" id="leveling-stage-5">大地的裂变</div>
+      <div class="title-2" id="leveling-stage-5">大地的裂变</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
 
       <div class="title-1" id="branch">分支专精</div>
@@ -58,14 +55,10 @@ const anchorParams = ref({
       href: '#leveling', title: '技能提升',
       subs: [
         { href: '#leveling-shortcut', title: '捷径配方' },
-        { href: '#leveling-main', title: '冲级攻略',
-          subs: [
-            { href: '#leveling-stage-1', title: '经典旧世' },
-            { href: '#leveling-stage-2', title: '燃烧的远征' },
-            { href: '#leveling-stage-3', title: '巫妖王之怒' },
-            { href: '#leveling-stage-4', title: '大地的裂变' },
-          ]
-        },
+        { href: '#leveling-stage-1', title: '经典旧世' },
+        { href: '#leveling-stage-2', title: '燃烧的远征' },
+        { href: '#leveling-stage-3', title: '巫妖王之怒' },
+        { href: '#leveling-stage-4', title: '大地的裂变' },
       ]
     },
     { href: '#branch', title: '分支专精' },

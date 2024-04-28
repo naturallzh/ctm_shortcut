@@ -5,7 +5,8 @@
       <div class="title-1" id="intro">简介</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
-
+      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4335502&_fp=1&rand=723')">[御前比武大会] cata工程1-525及部分心得</el-button>—— 流星羽翼</div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="23811" name="结构图：白色烟幕弹" class="mr-9"></DatabaseNav>
@@ -13,21 +14,17 @@
         <ProfSkillLevelStep :steps="[235, 255, 265, 275]" class="mr-18"></ProfSkillLevelStep>
         来源：沙塔斯贫民窟旅店门口-星界商人拉斯莱出售
       </div>
-
-      <div class="title-2" id="leveling-main">冲级攻略</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4335502&_fp=1&rand=723')">[御前比武大会] cata工程1-525及部分心得</el-button>—— 流星羽翼</div>
-      <div class="title-3" id="leveling-stage-1">铜锭 铁锭</div>
+      <div class="title-2" id="leveling-stage-1">铜锭 铁锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage1" />
-      <div class="title-3" id="leveling-stage-3">秘银锭</div>
+      <div class="title-2" id="leveling-stage-3">秘银锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage2" />
-      <div class="title-3" id="leveling-stage-4">瑟银锭</div>
+      <div class="title-2" id="leveling-stage-4">瑟银锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage3" />
-      <div class="title-3" id="leveling-stage-5">魔铁锭 精金锭</div>
+      <div class="title-2" id="leveling-stage-5">魔铁锭 精金锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
-      <div class="title-3" id="leveling-stage-6">钴锭 萨隆邪铁锭</div>
+      <div class="title-2" id="leveling-stage-6">钴锭 萨隆邪铁锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
-      <div class="title-3" id="leveling-stage-7">源质锭</div>
+      <div class="title-2" id="leveling-stage-7">源质锭</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage6" />
 
       <div class="title-1" id="branch">分支专精</div>
@@ -55,16 +52,12 @@ const anchorParams = ref({
       href: '#leveling', title: '技能提升',
       subs: [
         { href: '#leveling-shortcut', title: '捷径配方' },
-        { href: '#leveling-main', title: '冲级攻略',
-          subs: [
-            { href: '#leveling-stage-1', title: '铜锭 铁锭' },
-            { href: '#leveling-stage-2', title: '秘银锭' },
-            { href: '#leveling-stage-3', title: '瑟银锭' },
-            { href: '#leveling-stage-4', title: '魔铁锭 精金锭' },
-            { href: '#leveling-stage-5', title: '钴锭 萨隆邪铁锭' },
-            { href: '#leveling-stage-6', title: '源质锭' },
-          ]
-        },
+        { href: '#leveling-stage-1', title: '铜锭 铁锭' },
+        { href: '#leveling-stage-2', title: '秘银锭' },
+        { href: '#leveling-stage-3', title: '瑟银锭' },
+        { href: '#leveling-stage-4', title: '魔铁锭 精金锭' },
+        { href: '#leveling-stage-5', title: '钴锭 萨隆邪铁锭' },
+        { href: '#leveling-stage-6', title: '源质锭' },
       ]
     },
     { href: '#branch', title: '分支专精' },
