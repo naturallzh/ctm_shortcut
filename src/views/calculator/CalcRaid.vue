@@ -6,10 +6,18 @@
       <div class="mt-9">点击天赋分支以选择队伍成员</div>
       <div class="class-container mt-9">
         <div class="class-col" v-for="(item, index) of [[0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23,24],[25,26,27],[28,29,30]]" :style="item.length===4?'postion:relative;margin-top:-47px':''">
-          <div class="class-item" :class="`class-border-${index}`" v-for="classIdx of item" @click="addMem(classList[classIdx], classIdx, index)">
-            {{ classList[classIdx].name }}
-            <span v-if="classList[classIdx].count">({{ classList[classIdx].count }})</span>
-          </div>
+          <template v-for="classIdx of item">
+            <el-popover :width="260">
+              <div v-show="classList[classIdx].passive.length">默认提供: <span v-for="passiveIdx of classList[classIdx].passive" class="mr-9">{{ buffList[passiveIdx].name }}</span></div>
+              <div v-show="Object.keys(classList[classIdx].conflict).length">可开启: <span v-for="conflictIdx of Object.keys(classList[classIdx].conflict)" class="mr-9">{{ buffList[conflictIdx].name }}</span></div>
+              <template #reference>
+                <div class="class-item" :class="`class-border-${index}`" @click="addMem(classList[classIdx], classIdx, index)">
+                  {{ classList[classIdx].name }}
+                  <span v-if="classList[classIdx].count">({{ classList[classIdx].count }})</span>
+                </div>
+              </template>
+            </el-popover>
+          </template>
         </div>
       </div>
       <div class="mb-9">
@@ -22,22 +30,21 @@
             <el-button type="danger" class="ml-9">清空</el-button>
           </template>
         </el-popconfirm>
-        (<el-icon style="color: rgb(24, 180, 24)"><Select /></el-icon>表示需要此BUFF且团队提供, <el-icon style="color: red"><Close /></el-icon>表示需要此BUFF但团队不提供, - 表示不需要此BUFF, * 表示团队无此BUFF但有队员可开启)
+        (<el-icon style="color: rgb(24, 180, 24)"><Select /></el-icon>表示需要此BUFF且团队提供, <el-icon style="color: red"><Close /></el-icon>表示需要此BUFF但团队不提供, - 表示不需要此BUFF, <span class="clr-o">*</span> 表示团队无此BUFF但有队员可开启, 红色表示需求该BUFF)
       </div>
       <div class="buff-res-container">
         <div class="buff-list">
-          <div class="item-box" style="border-top: 1px solid white;">buff / 人员</div>
+          <div class="item-box" style="border-top: 1px solid white;">buff / 人员<span v-show="group.length">({{ group.length }})</span></div>
           <div class="item-box" v-for="(buffItem, buffIdx) of buffList">
             <el-popover
               placement="right"
               title="本效果可由以下职业提供："
               :width="260"
-              trigger="hover"
             >
               <span v-for="classItem of classList" style="padding: 0 3px;" v-show="classItem.passive.includes(buffIdx)||classItem.conflict[buffIdx]">{{ classItem.name }}</span>
               <div v-if="buffItem.desc" style="color: red">*注：{{ buffItem.desc }}</div>
               <template #reference>
-                <span>{{ buffItem.name }}<span v-show="ableToEnable(buffIdx)">*</span></span>
+                <span :style="required(buffIdx)?'color: red':''">{{ buffItem.name }}<span v-show="ableToEnable(buffIdx)" class="clr-o"> *</span></span>
               </template>
             </el-popover>
           </div>
@@ -163,7 +170,7 @@ const buffList = [
   { name: '力量敏捷', desc: '猎人由猫提供' }, { name: '4%物理易伤', desc: '猎人由掠夺者提供' }, { name: '攻强', desc: '近战20% 远程10%' }, { name: '12%破甲', desc: '猎人由迅猛龙提供' },
   { name: '10%攻速', desc: '' }, { name: '30%流血伤害', desc: '猎人由鬣狗提供' }, { name: '10%法强', desc: '法师和非元素德萨满只能提供6%' }, { name: '5%法术急速', desc: '' },
   { name: '8%法术易伤', desc: '猎人由风蛇提供' }, { name: '5%法术易爆', desc: '' }, { name: '耐力', desc: '猎人由异种虫提供' }, { name: '护甲', desc: '' },
-  { name: '-10%物理受伤', desc: '' }, { name: '团队回蓝', desc: '每分钟回复1%' }, { name: '5秒回蓝', desc: '' },
+  { name: '-10%物理受伤', desc: '' }, { name: '团队回蓝', desc: '每10秒回复1%' }, { name: '5秒回蓝', desc: '' },
 ]
 const buffListRes = ref([])
 const classList = [
@@ -185,9 +192,9 @@ const classList = [
   { id: 'pal-1', name: '奶骑', role: 'h', require: [0,1,2,3,10,11,14,15,16,17,18], passive: [], conflict: {1: [6, 18], 6: [1], 18: [1], 15: []}, desc: '', count: 0 },
   { id: 'pal-2', name: '防骑', role: 't', require: [0,1,2,3,4,5,6,7,8,14,15,16,17,18], passive: [], conflict: {1: [6, 18], 6: [1], 18: [1], 15: []}, desc: '', count: 0 },
   { id: 'pal-3', name: '惩戒骑', role: 'd1', require: [0,1,2,3,4,5,6,7,8,10,11,12,13,14,15,16,17,18], passive: [2, 17], conflict: {1: [6, 18], 6: [1], 18: [1], 15: []}, desc: '', count: 0 },
-  { id: 'hunt-1', name: '兽王猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [2], conflict: {0:[1,3,4,5,7,9,12,15], 1:[0,3,4,5,7,9,12,15],3:[0,1,4,5,7,9,12,15],4:[0,1,3,5,7,9,12,15],5:[0,1,3,4,7,9,12,15],7:[0,1,3,4,5,9,12,15],9:[0,1,3,4,5,7,12,15],12:[0,1,3,4,5,7,9,15],15:[0,1,3,4,5,7,9,12]}, desc: '', count: 0 },
-  { id: 'hunt-2', name: '射击猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [6], conflict: {3:[4,5,7,9,12,15],4:[3,5,7,9,12,15],5:[3,4,7,9,12,15],7:[3,4,5,9,12,15],9:[3,4,5,7,12,15],12:[3,4,5,7,9,15],15:[3,4,5,7,9,12]}, desc: '', count: 0 },
-  { id: 'hunt-3', name: '生存猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [8], conflict: {3:[4,5,7,9,12,15],4:[3,5,7,9,12,15],5:[3,4,7,9,12,15],7:[3,4,5,9,12,15],9:[3,4,5,7,12,15],12:[3,4,5,7,9,15],15:[3,4,5,7,9,12]}, desc: '', count: 0 },
+  { id: 'hunt-1', name: '兽王猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [2], conflict: {0:[1,3,4,5,7,9,12,14], 1:[0,3,4,5,7,9,12,14],3:[0,1,4,5,7,9,12,14],4:[0,1,3,5,7,9,12,1],5:[0,1,3,4,7,9,12,14],7:[0,1,3,4,5,9,12,14],9:[0,1,3,4,5,7,12,14],12:[0,1,3,4,5,7,9,14],14:[0,1,3,4,5,7,9,12]}, desc: '', count: 0 },
+  { id: 'hunt-2', name: '射击猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [6], conflict: {3:[4,5,7,9,12,14],4:[3,5,7,9,12,14],5:[3,4,7,9,12,14],7:[3,4,5,9,12,14],9:[3,4,5,7,12,14],12:[3,4,5,7,9,14],14:[3,4,5,7,9,12]}, desc: '', count: 0 },
+  { id: 'hunt-3', name: '生存猎', role: 'd1', require: [0,1,2,3,4,5,6,7,8,14,15,16], passive: [8], conflict: {3:[4,5,7,9,12,14],4:[3,5,7,9,12,14],5:[3,4,7,9,12,14],7:[3,4,5,9,12,14],9:[3,4,5,7,12,14],12:[3,4,5,7,9,14],14:[3,4,5,7,9,12]}, desc: '', count: 0 },
   { id: 'dru-1', name: '平衡德', role: 'd2', require: [0,1,2,3,10,11,12,13,14,15,16,17,18], passive: [1, 11, 12], conflict: {}, desc: '', count: 0 },
   { id: 'dru-2', name: '熊德', role: 't', require: [0,1,2,3,4,5,6,7,8,9,14,15,16], passive: [1, 3, 7, 9], conflict: {}, desc: '', count: 0 },
   { id: 'dru-3', name: '猫德', role: 'd1', require: [0,1,2,3,4,5,6,7,8,9,14,15,16], passive: [1, 3, 7, 9], conflict: {}, desc: '', count: 0 },
@@ -204,6 +211,13 @@ const ableToEnable = (buffIdx) => {
   if (buffListRes.value[buffIdx]?.enabled) { return false }
   for (const mem of group) {
     if (mem.passive.includes(buffIdx) || mem.conflict[buffIdx]) { return true }
+  }
+  return false
+}
+const required = (buffIdx) => {
+  if (buffListRes.value[buffIdx]?.enabled) { return false }
+  for (const mem of group) {
+    if (mem.require.includes(buffIdx)) { return true }
   }
   return false
 }
