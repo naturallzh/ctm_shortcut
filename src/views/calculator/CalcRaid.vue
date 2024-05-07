@@ -8,8 +8,8 @@
         <div class="class-col" v-for="(item, index) of [[0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23,24],[25,26,27],[28,29,30]]" :style="item.length===4?'postion:relative;margin-top:-47px':''">
           <template v-for="classIdx of item">
             <el-popover :width="260">
-              <div v-show="classList[classIdx].passive.length">默认提供: <span v-for="passiveIdx of classList[classIdx].passive" class="mr-9">{{ buffList[passiveIdx].name }}</span></div>
-              <div v-show="Object.keys(classList[classIdx].conflict).length">可开启: <span v-for="conflictIdx of Object.keys(classList[classIdx].conflict)" class="mr-9">{{ buffList[conflictIdx].name }}</span></div>
+              <div>默认提供: <span v-for="passiveIdx of classList[classIdx].passive" class="mr-9">{{ buffList[passiveIdx].name }}</span><span v-show="!classList[classIdx].passive.length">无</span></div>
+              <div>可开启: <span v-for="conflictIdx of Object.keys(classList[classIdx].conflict)" class="mr-9">{{ buffList[conflictIdx].name }}</span><span v-show="!Object.keys(classList[classIdx].conflict).length">无</span></div>
               <template #reference>
                 <div class="class-item" :class="`class-border-${index}`" @click="addMem(classList[classIdx], classIdx, index)">
                   {{ classList[classIdx].name }}
