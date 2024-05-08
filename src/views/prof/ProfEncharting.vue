@@ -7,7 +7,7 @@
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>附魔棒额外材料：银棒*1 金棒*1 彩色珍珠*1 真银棒*1 黑珍珠*1 奥金棒*1 魔铁棒*1 精金棒*1 恒金棒*1 泰坦神铁棒*1 源质棒*1</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4321214&_fp=1&rand=977')">[御前比武大会] 附魔1-525心得</el-button>—— vivid_lai</div>
+      <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] 附魔1-525心得" url="https://bbs.nga.cn/read.php?tid=4321214" author="vivid_lai" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="11101" name="公式：附魔护腕 - 次级力量" class="mr-9"></DatabaseNav>
@@ -54,6 +54,7 @@ import Anchor from '@/components/Anchor.vue'
 import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
+import WebLink from '@/components/WebLink.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

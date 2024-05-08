@@ -1,18 +1,21 @@
 <template>
-  <el-dropdown split-button size="small" type="primary" @click="handleClick('nfu')">
+  <el-dropdown split-button size="small" type="primary" @click="handleOpenDrawerView">
     {{ name }}
     <template #dropdown>
       <el-dropdown-menu>
+        <el-dropdown-item @click="handleClick('nfu')">nfu数据库</el-dropdown-item>
         <el-dropdown-item @click="handleClick('wowheadCn')">wowhead(中)</el-dropdown-item>
         <el-dropdown-item @click="handleClick('wowheadEn')">wowhead(英)</el-dropdown-item>
       </el-dropdown-menu>
     </template>
+    <DrawerView :url="url.nfu" ref="drawerViewRef"></DrawerView>
   </el-dropdown>
 </template>
 
 <script setup>
 import utils from '@/utils/index'
 import { ref } from 'vue'
+import DrawerView from './DrawerView.vue'
 
 const props = defineProps(['type', 'id', 'name'])
 const url = ref({})
@@ -42,6 +45,11 @@ const handleClick = (target) => {
   if (url.value[target]) {
     utils.openUrl(url.value[target])
   }
+}
+
+const drawerViewRef = ref()
+const handleOpenDrawerView = () => {
+  drawerViewRef.value.open()
 }
 </script>
 

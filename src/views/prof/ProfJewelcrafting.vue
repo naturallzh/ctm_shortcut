@@ -7,7 +7,7 @@
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>切割宝石和项链/戒指制造存在大量同类配方，可根据情况替换</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4320179&_fp=1&rand=862')">[御前比武大会] 珠宝1-525心得</el-button>—— 流浪的暮暮</div>
+      <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] 珠宝1-525心得" url="https://bbs.nga.cn/read.php?tid=4320179" author="流浪的暮暮" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="20854" name="图鉴：月之护符" class="mr-9"></DatabaseNav>
@@ -40,6 +40,7 @@ import Anchor from '@/components/Anchor.vue'
 import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
+import WebLink from '@/components/WebLink.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

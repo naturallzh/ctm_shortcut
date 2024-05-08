@@ -25,6 +25,7 @@
           </div>
         </div>
       </div>
+      <div class="title-2">多彩宝石</div>
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>同类配方极多，可根据情况替换</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://g.nga.cn/read.php?tid=4983628&_fp=25&rand=812')">[御前比武大会]4.3 铭文1-525</el-button>—— f77521881</div>
+      <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会]4.3 铭文1-525" url="https://bbs.nga.cn/read.php?tid=4983628" author="f77521881" /></div>
       <div class="title-2" id="leveling-stage-1">经典旧世</div>
       <div>乳白墨水：宁神花、银叶草、地根草</div>
       <div>午夜墨水/猎人墨水：魔皇草、石南草、雨燕草、荆棘藻、跌打草</div>
@@ -36,6 +36,7 @@ import Anchor from '@/components/Anchor.vue'
 import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
+import WebLink from '@/components/WebLink.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

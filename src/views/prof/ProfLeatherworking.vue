@@ -6,7 +6,7 @@
       <div class="title-1" id="benifit">收益</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
-      <div class="flex-align-center">原帖地址：<el-button link type="primary" @click="utils.openUrl('https://ngabbs.com/read.php?tid=4977051&_fp=26&rand=57')">[作业贴][4.3.3版本] 制皮1-525攻略</el-button>—— bjhhh</div>
+      <div class="flex-align-center">原帖地址：<WebLink title="[作业贴][4.3.3版本] 制皮1-525攻略" url="https://bbs.nga.cn/read.php?tid=4977051" author="bjhhh" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">
         <DatabaseNav type="item" id="4294" name="图样：山地腰带" class="mr-9"></DatabaseNav>
@@ -80,6 +80,7 @@ import Anchor from '@/components/Anchor.vue'
 import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
+import WebLink from '@/components/WebLink.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({
