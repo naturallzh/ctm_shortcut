@@ -1,7 +1,7 @@
 <template>
-  <div class="kit-gem general-conainer" ref="containerRef">
+  <div class="kit-gem general-conainer">
     <div class="inner general-inner">
-      <div class="title-1" id="nameSearch">名称速查</div>
+      <div class="title-1">宝石名称速查</div>
       <div class="title-2">普通宝石</div>
       <div class="mt-9">选择一种属性后查看匹配结果</div>
       <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
@@ -33,17 +33,6 @@
 <script setup>
 import { ref, computed } from 'vue'
 import utils from '@/utils'
-import Anchor from '@/components/Anchor.vue'
-
-const containerRef = ref(null)
-const anchorParams = ref({
-  anchorAttr: {
-    container: containerRef
-  },
-  children: [
-    { href: '#nameSearch', title: '名称速查' },
-  ]
-})
 
 const nameSearchVal = ref('')
 const nameSearchOptions = ref({

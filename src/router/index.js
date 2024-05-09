@@ -60,8 +60,10 @@ import RaidTheBastionOfTwilight from '../views/raid/RaidTheBastionOfTwilight.vue
 import RaidFirelands from '../views/raid/RaidFirelands.vue'
 import RaidDragonSoul from '../views/raid/RaidDragonSoul.vue'
 
-import CalcGem from '../views/calculator/CalcGem.vue'
-import CalcRaid from '../views/calculator/CalcRaid.vue'
+import KitGemName from '../views/kit/KitGemName.vue'
+import KitRaidBuffSim from '../views/kit/KitRaidBuffSim.vue'
+import KitHasteBreakPointCalc from '../views/kit/KitHasteBreakPointCalc.vue'
+import KitMacroGenerator from '../views/kit/KitMacroGenerator.vue'
 
 const router = createRouter({
   // history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -136,8 +138,10 @@ const router = createRouter({
     { path: '/raid-firelands', name: 'raid-firelands', component: RaidFirelands },
     { path: '/raid-dragonSoul', name: 'raid-dragonSoul', component: RaidDragonSoul },
 
-    { path: '/calc-gem', name: 'calc-gem', component: CalcGem },
-    { path: '/calc-raid', name: 'calc-raid', component: CalcRaid },
+    { path: '/kit-gemName', name: 'kit-gemName', component: KitGemName },
+    { path: '/kit-raidBuffSim', name: 'kit-raidBuffSim', component: KitRaidBuffSim },
+    { path: '/kit-hasteBreakPointCalc', name: 'kit-hasteBreakPointCalc', component: KitHasteBreakPointCalc },
+    { path: '/kit-macroGenerator', name: 'kit-macroGenerator', component: KitMacroGenerator },
   ]
 })
 

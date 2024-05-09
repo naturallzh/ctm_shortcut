@@ -44,12 +44,12 @@
               </template>
               <el-menu-item v-for="(item, index) of menuItems.raid" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
             </el-sub-menu>
-            <el-sub-menu index="calculator">
+            <el-sub-menu index="kit">
               <template #title>
                 <el-icon><Cpu /></el-icon>
-                <span>计算器</span>
+                <span>小工具</span>
               </template>
-              <el-menu-item v-for="(item, index) of menuItems.calc" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
+              <el-menu-item v-for="(item, index) of menuItems.kit" :key="item.id" :index="item.id" @click="changeRoute(item.id)">{{ item.name }}</el-menu-item>
             </el-sub-menu>
           </el-menu>
         </el-scrollbar>
@@ -143,9 +143,11 @@ const menuItems = {
     { id: 'raid-firelands', name: '火焰之地' },
     { id: 'raid-dragonSoul', name: '巨龙之魂' },
   ],
-  calc: [
-    { id: 'calc-gem', name: '珠宝' },
-    { id: 'calc-raid', name: '团队配置' },
+  kit: [
+    { id: 'kit-gemName', name: '珠宝名称速查' },
+    { id: 'kit-raidBuffSim', name: '团队BUFF配置模拟' },
+    { id: 'kit-hasteBreakPointCalc', name: '急速断点计算器' },
+    { id: 'kit-macroGenerator', name: '宏生成器' },
   ]
 }
 </script>

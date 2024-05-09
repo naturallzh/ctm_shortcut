@@ -1,8 +1,7 @@
 <template>
-  <div class="calc-raid general-conainer" ref="containerRef">
+  <div class="kit-raid general-conainer">
     <div class="inner general-inner">
-      <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
-      <div class="title-1" id="buffCheck">BUFF检查</div>
+      <div class="title-1">团队BUFF配置模拟</div>
       <div class="mt-9">点击天赋分支以选择队伍成员</div>
       <div class="class-container mt-9">
         <div class="class-col" v-for="(item, index) of [[0,1,2],[3,4,5],[6,7,8],[9,10,11],[12,13,14],[15,16,17],[18,19,20],[21,22,23,24],[25,26,27],[28,29,30]]" :style="item.length===4?'postion:relative;margin-top:-47px':''">
@@ -82,18 +81,7 @@
 <script setup>
 import { ref, computed, reactive } from 'vue'
 import utils from '@/utils'
-import Anchor from '@/components/Anchor.vue'
 import { ElMessage } from 'element-plus'
-
-const containerRef = ref(null)
-const anchorParams = ref({
-  anchorAttr: {
-    container: containerRef
-  },
-  children: [
-    { href: '#buffCheck', title: 'BUFF检查' },
-  ]
-})
 
 const group = reactive([])
 const addMem = (classItem, classIdx, classI) => {
@@ -225,7 +213,7 @@ const required = (buffIdx) => {
 </script>
 
 <style lang="scss" scoped>
-.calc-raid{
+.kit-raid{
   .inner {
     .class-container {
       width: 100%;
