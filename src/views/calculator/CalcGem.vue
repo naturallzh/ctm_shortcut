@@ -1,7 +1,6 @@
 <template>
-  <div class="calc-gem general-conainer" ref="containerRef">
+  <div class="kit-gem general-conainer" ref="containerRef">
     <div class="inner general-inner">
-      <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="nameSearch">名称速查</div>
       <div class="title-2">普通宝石</div>
       <div class="mt-9">选择一种属性后查看匹配结果</div>
@@ -26,6 +25,7 @@
         </div>
       </div>
       <div class="title-2">多彩宝石</div>
+      <div class="mt-9">待补充</div>
     </div>
   </div>
 </template>
@@ -176,7 +176,7 @@ const handleSearchChange = (val) => {
 </script>
 
 <style lang="scss" scoped>
-.calc-gem{
+.kit-gem{
   .inner {
     .gem-radio-group {
       padding: 0 9px;

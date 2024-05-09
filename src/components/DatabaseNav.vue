@@ -23,14 +23,21 @@ const init = () => {
   switch (props.type) {
     case 'item':
       url.value = {
-        nfu: `http://db.nfuwow.com/85/?item=${props.id}`,
+        nfu: `https://db.nfuwow.com/85/?item=${props.id}`,
         wowheadCn: `https://www.wowhead.com/cata/cn/item=${props.id}`,
         wowheadEn: `https://www.wowhead.com/cata/item=${props.id}`,
       }
       break
+    case 'item-set':
+      url.value = {
+        nfu: `https://db.nfuwow.com/85/?itemset=${props.id}`,
+        wowheadCn: `https://www.wowhead.com/cata/cn/item-set=${props.id}`,
+        wowheadEn: `https://www.wowhead.com/cata/item-set=${props.id}`,
+      }
+      break
     case 'spell':
       url.value = {
-        nfu: `http://db.nfuwow.com/85/?spell=${props.id}`,
+        nfu: `https://db.nfuwow.com/85/?spell=${props.id}`,
         wowheadCn: `https://www.wowhead.com/cata/cn/spell=${props.id}`,
         wowheadEn: `https://www.wowhead.com/cata/spell=${props.id}`,
       }

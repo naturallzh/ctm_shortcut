@@ -3,7 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="benifit">收益</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="leveling">攻略</div>
       <div class="mt-18">采集专业一般不需要特意去练，攻略多侧重产量</div>
       <div class="mt-9">那一天，人们回想起了被牛头德支配的恐怖</div>

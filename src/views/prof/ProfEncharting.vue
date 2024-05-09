@@ -3,7 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="benifit">收益</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>附魔棒额外材料：银棒*1 金棒*1 彩色珍珠*1 真银棒*1 黑珍珠*1 奥金棒*1 魔铁棒*1 精金棒*1 恒金棒*1 泰坦神铁棒*1 源质棒*1</div>

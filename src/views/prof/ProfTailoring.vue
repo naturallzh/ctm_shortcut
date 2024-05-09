@@ -3,7 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="benifit">收益</div>
+      <div class="mt-9">待补充</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div class="flex-align-center">原帖地址：<WebLink title="​[御前比武大会]裁缝1-525" url="https://bbs.nga.cn/read.php?tid=4330970" author="暗之魔妃" /></div>
@@ -43,6 +45,7 @@
       <ProfSkillLevelItem :data-arr="levelingData.stage8" />
 
       <div class="title-1" id="branch">分支专精</div>
+      <div class="mt-9">待补充</div>
     </div>
   </div>
 </template>
