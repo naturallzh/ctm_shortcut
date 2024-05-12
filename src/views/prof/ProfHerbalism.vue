@@ -3,9 +3,10 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">采集专业，通常与铭文或炼金配套</div>
+      <div>牛头人种族被动: <DatabaseNav type="spell" name="栽培" id="20552"></DatabaseNav> 提高15点技能并提升采集速度</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">主动技能: <DatabaseNav type="spell" name="生命之血" id="74497"></DatabaseNav> 少量治疗，急速提高480点，持续20秒，冷却2分钟，约等效常驻80急速 (2颗蓝色急速宝石)</div>
       <div class="title-1" id="leveling">攻略</div>
       <div class="mt-18">采集专业一般不需要特意去练，攻略多侧重产量</div>
       <div class="mt-9">那一天，人们回想起了被牛头德支配的恐怖</div>
@@ -20,6 +21,7 @@ import { ref } from 'vue'
 import utils from '@/utils'
 import Anchor from '@/components/Anchor.vue'
 import WebLink from '@/components/WebLink.vue'
+import DatabaseNav from '@/components/DatabaseNav.vue'
 
 const containerRef = ref()
 const anchorParams = ref({

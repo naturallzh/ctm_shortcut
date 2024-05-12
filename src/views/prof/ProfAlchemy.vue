@@ -3,9 +3,13 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用草药制作药水、药剂与合剂</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">专用无限小合剂: <DatabaseNav type="spell" :id="80724" name="增强合剂" class="mr-9" />收益为2个蓝色主属性宝石，但会被正常合剂覆盖</div>
+      <div class="mt-9">可以制造并使用炼金专用饰品: <DatabaseNav type="spell" :id="80508" name="生命炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96252" name="烈性炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96253" name="活泼炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96254" name="活力炼金石" class="mr-9" /></div>
+      <div class="mt-9">制造可载人飞行坐骑: <DatabaseNav type="spell" :id="93328" name="时沙之瓶" class="mr-9" /></div>
+      <div class="mt-9">制造小队药锅: <DatabaseNav type="spell" :id="92643" name="战斗药锅" class="mr-9" />团队药锅: <DatabaseNav type="spell" :id="92688" name="大号战斗药锅" class="mr-9" /></div>
+      <div class="mt-9">每日转化: <DatabaseNav type="spell" :id="78866" name="转化-生命元素" class="mr-9" /><DatabaseNav type="spell" :id="80243" name="转化-真金" class="mr-9" /></div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>同类配方极多，可根据情况替换</div>
@@ -33,7 +37,11 @@
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
 
       <div class="title-1" id="branch">分支专精</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">在主城的炼金NPC处领专精任务</div>
+      <div class="mt-9">药水大师需要: <DatabaseNav type="spell" :id="80498" name="奇效治疗药水 * 6" class="mr-9" /><DatabaseNav type="spell" :id="80494" name="奇效法力药水 * 6" class="mr-9" /><DatabaseNav type="spell" :id="80726" name="寻宝药水 * 2" class="mr-9" /></div>
+      <div class="mt-9">转化大师需要: <DatabaseNav type="spell" :id="80243" name="真金 * 4" class="mr-9" /></div>
+      <div class="mt-9">药剂大师需要: <DatabaseNav type="spell" :id="80719" name="钢皮合剂 * 2" class="mr-9" /><DatabaseNav type="spell" :id="80720" name="神龙心智合剂 * 2" class="mr-9" /><DatabaseNav type="spell" :id="80721" name="风行合剂 * 2" class="mr-9" /><DatabaseNav type="spell" :id="80723" name="泰坦之力合剂 * 2" class="mr-9" /></div>
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

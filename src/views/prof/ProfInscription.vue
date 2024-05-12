@@ -3,9 +3,10 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用草药研磨的颜料制作雕文、各种战备消耗品与暗月卡牌</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">商业出售:  <DatabaseNav type="spell" :id="86615" name="暗月毁灭卡片" class="mr-9" /><DatabaseNav type="spell" :id="89367" name="冒险者的日志" class="mr-9" /><DatabaseNav type="spell" :id="92027" name="消魔尘" class="mr-9" /><DatabaseNav type="spell" :id="86609" name="神秘的财富卡" class="mr-9" /></div>
+      <div class="mt-9">独特肩膀附魔:  <DatabaseNav type="spell" :id="86402" name="大地公主的铭文" class="mr-9" /><DatabaseNav type="spell" :id="86401" name="狮鬃铭文" class="mr-9" /><DatabaseNav type="spell" :id="86403" name="邪火铭文" class="mr-9" /><DatabaseNav type="spell" :id="86375" name="迅钢铭文" class="mr-9" />额外收益为2颗蓝色耐力/力量/智力/敏捷宝石</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>同类配方极多，可根据情况替换</div>
@@ -27,6 +28,7 @@
       <div class="title-2" id="leveling-stage-5">大地的裂变</div>
       <div>秋闲墨水/炼狱墨水：燃烬草、艾萨拉雾菇、鞭尾草、暮光茉莉、风暴藤、心灵之花</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>
