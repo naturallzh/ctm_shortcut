@@ -1,8 +1,8 @@
 <template>
-  <div class="kit-gem general-conainer">
+  <div class="kit-gem general-conainer" ref="containerRef">
     <div class="inner general-inner">
-      <div class="title-1">宝石名称速查</div>
-      <div class="title-2">普通宝石</div>
+      <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
+      <div class="title-1" id="gem">普通宝石</div>
       <div class="mt-9">选择一种属性后查看匹配结果</div>
       <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
       <div class="mt-18 gem-radio-group" :class="index" v-for="(colorGroup, index) of nameSearchOptions">
@@ -24,8 +24,22 @@
           </div>
         </div>
       </div>
-      <div class="title-2">多彩宝石</div>
-      <div class="mt-9">待补充</div>
+
+      <div class="title-1" id="metaGem">多彩宝石</div>
+      <div class="mt-9">点击条目以复制珠宝名称</div>
+      <div class="mt-9 fw-b">力量 / 敏捷</div>
+      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[0]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9 fw-b">智力</div>
+      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[1]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9 fw-b">耐力</div>
+      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[2]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9 fw-b">其他副属性</div>
+      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[3]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      
+      <div class="title-1" id="cogwheelGem">工程齿轮</div>
+      <div class="mt-9">点击条目以复制兑换物名称</div>
+      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.cost.name)" v-for="item of cogwheelGemList">{{ item.str }} <DatabaseNav class="mr-9" type="item" :id="item.id" :name="item.name" /><DatabaseNav type="spell" :id="item.cost.id" :name="item.cost.name" />*{{ item.cost.count }}</div>
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>
@@ -33,6 +47,20 @@
 <script setup>
 import { ref, computed } from 'vue'
 import utils from '@/utils'
+import Anchor from '@/components/Anchor.vue'
+import DatabaseNav from '@/components/DatabaseNav.vue'
+
+const containerRef = ref()
+const anchorParams = ref({
+  anchorAttr: {
+    container: containerRef
+  },
+  children: [
+    { href: '#gem', title: '普通宝石' },
+    { href: '#metaGem', title: '多彩宝石' },
+    { href: '#cogwheelGem', title: '工程齿轮' },
+  ]
+})
 
 const nameSearchVal = ref('')
 const nameSearchOptions = ref({
@@ -162,6 +190,36 @@ const handleSearchChange = (val) => {
     }
   }
 }
+
+const metaGemList = [
+  [{ id: 96256, name: '反冲之影魂钻石', str: '+54 力量 +3% 爆击效果', req: [3,0,0] },
+  { id: 96255, name: '灵巧之影魂钻石', str: '+54 敏捷 +3% 爆击效果', req: [3,0,0] },],
+  [{ id: 96257, name: '燃烧之影魂钻石', str: '+54 智力 +3% 爆击效果', req: [3,0,0] },
+  { id: 73470, name: '灰烬之影魂钻石', str: '+54 智力 最大法力值提高2%', req: [0,2,0] },
+  { id: 73466, name: '鼓舞之影魂钻石', str: '+54 智力 威胁降低2%', req: [0,1,1] },
+  { id: 73476, name: '遗忘之影魂钻石', str: '+54 智力 沉默时间缩短10%', req: [1,0,1] },],
+  [{ id: 73467, name: '永恒之影魂钻石', str: '+81 耐力 +1% 盾牌格挡值', req: [0,0,3] },
+  { id: 73468, name: '质朴之影魂钻石', str: '+81 耐力 由物品获得的护甲值提高2%', req: [0,2,0] },
+  { id: 73473, name: '强能之影魂钻石', str: '+81 耐力 昏迷时间缩短10%', req: [0,0,2] },
+  { id: 73469, name: '光辉之影魂钻石', str: '+81 耐力 受到的法术伤害降低2%', req: [1,1,0] },],
+  [{ id: 73465, name: '混乱之影魂钻石', str: '+54 爆击 +3% 爆击效果', req: [3,0,0] },
+  { id: 73472, name: '毁灭之影魂钻石', str: '+54 爆击 +1% 法术反射', req: [2,0,0] },
+  { id: 73474, name: '神秘之影魂钻石', str: '+54 爆击 诱捕/缠绕时间缩短10%', req: [0,1,1] },
+  { id: 73475, name: '冷酷之影魂钻石', str: '+54 爆击 恐惧时间缩短10%', req: [0,1,1] },
+  { id: 73464, name: '疾驰之影魂钻石', str: '+54 精通 奔跑速度略微提高', req: [0,2,0] },
+  { id: 73471, name: '复苏之影魂钻石', str: '+54 精神 +3% 爆击效果', req: [0,1,1] },]
+]
+
+const cogwheelGemList = [
+  { id: 59478, name: '光滑的齿轮', str: '+208 爆击', cost: {name: '一捧黑曜石螺栓', id: 84403, count: 4} },
+  { id: 59478, name: '迅捷齿轮', str: '+208 急速', cost: {name: '一捧黑曜石螺栓', id: 84403, count: 4} },
+  { id: 59478, name: '断裂的齿轮', str: '+208 精通', cost: {name: '地精烤肉野餐', id: 84429, count: 1} },
+  { id: 59478, name: '火花齿轮', str: '+208 精神', cost: {name: '正牌初级工程师护目镜', id: 84406, count: 1} },
+  { id: 59478, name: '刚硬齿轮', str: '+208 命中', cost: {name: '源质工具箱', id: 84416, count: 1} },
+  { id: 59478, name: '精准齿轮', str: '+208 精准', cost: {name: '捕鱼大师的工具箱', id: 84415, count: 1} },
+  { id: 59478, name: '精巧的齿轮', str: '+208 躲闪', cost: {name: '电化以太', id: 94748, count: 3} },
+  { id: 59478, name: '闪光齿轮', str: '+208 招架', cost: {name: '不稳定的爆盐炸药', id: 84409, count: 1} },
+]
 </script>
 
 <style lang="scss" scoped>
@@ -185,6 +243,9 @@ const handleSearchChange = (val) => {
     .Orange-border {border: 2px solid orange;}
     .Purple-border {border: 2px solid purple;}
     .Green-border {border: 2px solid rgb(19, 196, 4);}
+    .clr-0 {color: red; margin: 0 5px;}
+    .clr-1 {color: yellow; margin: 0 5px;}
+    .clr-2 {color: rgb(28, 173, 249); margin: 0 5px;}
   }
 }
 </style>

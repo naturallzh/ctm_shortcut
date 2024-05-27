@@ -3,9 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">制造专业，使用草药制作药水、药剂与合剂</div>
+      <div class="mt-9">制造专业，使用草药制作药水、药剂与合剂，通常与草药学配套</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">专用无限小合剂: <DatabaseNav type="spell" :id="80724" name="增强合剂" class="mr-9" />收益为2个蓝色主属性宝石，但会被正常合剂覆盖</div>
+      <div class="mt-9">专用无限小合剂: <DatabaseNav type="spell" :id="80724" name="增强合剂" class="mr-9" />收益为2个蓝色主属性宝石。吃普通合剂时有等值加成</div>
       <div class="mt-9">可以制造并使用炼金专用饰品: <DatabaseNav type="spell" :id="80508" name="生命炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96252" name="烈性炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96253" name="活泼炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96254" name="活力炼金石" class="mr-9" /></div>
       <div class="mt-9">制造可载人飞行坐骑: <DatabaseNav type="spell" :id="93328" name="时沙之瓶" class="mr-9" /></div>
       <div class="mt-9">制造小队药锅: <DatabaseNav type="spell" :id="92643" name="战斗药锅" class="mr-9" />团队药锅: <DatabaseNav type="spell" :id="92688" name="大号战斗药锅" class="mr-9" /></div>

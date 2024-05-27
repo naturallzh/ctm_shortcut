@@ -3,9 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用珠宝原石和矿锭制造宝石、项链、戒指等，通常与采矿搭配</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">专用宝石:  可装备3颗<DatabaseNav type="spell" :id="73397" name="精致奇美拉之眼" />等使用<DatabaseNav type="item" :id="52196" name="奇美拉之眼" />制造的宝石，等效收益2颗蓝色宝石(全身蓝宝石时) / 1.25颗蓝色宝石(全身紫宝石时)</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>切割宝石和项链/戒指制造存在大量同类配方，可根据情况替换</div>
@@ -31,6 +31,7 @@
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
       <div class="title-2" id="leveling-stage-7">大地的裂变</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage6" />
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

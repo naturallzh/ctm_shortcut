@@ -3,9 +3,11 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用皮革制造皮甲与锁甲，通常与剥皮搭配</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">商业出售:  <DatabaseNav type="spell" :id="78478" name="焦鳞腿甲" class="mr-9" /><DatabaseNav type="spell" :id="78477" name="龙鳞腿甲片" class="mr-9" /><DatabaseNav type="spell" :id="101599" name="龙皮腿甲片" class="mr-9" /></div>
+      <div class="mt-9">便宜腿甲片:  <DatabaseNav type="spell" :id="85068" name="焦鳞腿甲强化片" class="mr-9" /><DatabaseNav type="spell" :id="85067" name="龙骨腿甲强化片" class="mr-9" /><DatabaseNav type="spell" :id="101600" name="龙皮腿甲强化片" class="mr-9" /></div>
+      <div class="mt-9">护腕附魔:  <DatabaseNav type="spell" :id="85010" name="龙人雕饰-智力" class="mr-9" /><DatabaseNav type="spell" :id="85008" name="龙人雕饰-敏捷" class="mr-9" /><DatabaseNav type="spell" :id="85009" name="龙人雕饰-力量" class="mr-9" /><DatabaseNav type="spell" :id="85007" name="龙人雕饰-耐力" class="mr-9" />除耐力外收益等效2颗蓝色宝石，CTM没有护腕耐力附魔</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[作业贴][4.3.3版本] 制皮1-525攻略" url="https://bbs.nga.cn/read.php?tid=4977051" author="bjhhh" /></div>
@@ -72,6 +74,7 @@
 
       <div class="title-1" id="branch">分支专精</div>
       <div class="mt-9">待补充</div>
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

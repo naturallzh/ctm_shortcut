@@ -3,9 +3,12 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用矿锭制造工程头、炸弹等，通常与采矿搭配</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">商业出售:  <DatabaseNav type="spell" :id="84428" name="侏儒x光瞄准镜" class="mr-9" /><DatabaseNav type="spell" :id="84412" name="便携式世界毁灭者" class="mr-9" /><DatabaseNav type="spell" :id="84413" name="解除武装的机甲伙伴" class="mr-9" /></div>
+      <div class="mt-9"><DatabaseNav type="spell" :id="81714" name="强化生物光学远望镜" />或其他工程头，可使用<DatabaseNav type="spell" :id="59478" name="光滑的齿轮" />或其他齿轮</div>
+      <div class="mt-9"><DatabaseNav type="spell" :id="68067" name="基维斯" class="mr-9" /></div>
+      <div class="mt-9"><DatabaseNav type="spell" :id="82175" name="神经元弹簧" />或其他手套附魔<DatabaseNav type="spell" :id="55016" name="氮气推进器" class="ml-9" />或其他腰带附魔</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] cata工程1-525及部分心得" url="https://bbs.nga.cn/read.php?tid=4335502" author="流星羽翼" /></div>
@@ -31,6 +34,7 @@
 
       <div class="title-1" id="branch">分支专精</div>
       <div class="mt-9">待补充</div>
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

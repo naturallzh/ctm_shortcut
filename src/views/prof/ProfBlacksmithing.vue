@@ -3,9 +3,10 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">制造专业，使用矿锭制造板甲与武器，通常与采矿搭配</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">商业出售:  <DatabaseNav type="spell" :id="76439" name="乌钢带扣" class="mr-9" /></div>
+      <div class="mt-9">装备打孔:  <DatabaseNav type="spell" :id="55628" name="护腕插槽" class="mr-9" /><DatabaseNav type="spell" :id="55641" name="手套插槽" class="mr-9" />额外收益最大等效2颗紫色宝石</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>阶段划分比较粗略，替换配方较多，建议多权衡</div>
@@ -48,6 +49,7 @@
 
       <div class="title-1" id="branch">分支专精</div>
       <div class="mt-9">待补充</div>
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

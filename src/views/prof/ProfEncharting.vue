@@ -3,9 +3,9 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">分解装备获取附魔材料，利用附魔材料为装备附魔(添加额外属性)</div>
       <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
+      <div class="mt-9">戒指附魔:  <DatabaseNav type="spell" :id="74215" name="附魔戒指-力量" class="mr-9" /><DatabaseNav type="spell" :id="74216" name="附魔戒指-敏捷" class="mr-9" /><DatabaseNav type="spell" :id="74217" name="附魔戒指-智力" class="mr-9" /><DatabaseNav type="spell" :id="74218" name="附魔戒指-强效耐力" class="mr-9" />额外收益等效2颗蓝色宝石</div>
       <div class="title-1" id="leveling">技能提升</div>
       <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>附魔棒额外材料：银棒*1 金棒*1 彩色珍珠*1 真银棒*1 黑珍珠*1 奥金棒*1 魔铁棒*1 精金棒*1 恒金棒*1 泰坦神铁棒*1 源质棒*1</div>
@@ -45,6 +45,7 @@
       <ProfSkillLevelItem :data-arr="levelingData.stage4" />
       <div class="title-2" id="leveling-stage-8">符文泰坦神铁棒 符文源质棒</div>
       <ProfSkillLevelItem :data-arr="levelingData.stage5" />
+      <div style="height: 36px;"></div>
     </div>
   </div>
 </template>

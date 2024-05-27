@@ -4,8 +4,6 @@
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
       <div class="mt-9">待补充</div>
-      <div class="title-1" id="benifit">收益</div>
-      <div class="mt-9">待补充</div>
       <div class="title-1" id="leveling">攻略</div>
       <div class="flex-align-center mt-18">攻略1：<WebLink title="[事关考古]一些也许可以称作心得的东西" url="https://bbs.nga.cn/read.php?tid=3900118" author="iThat" /></div>
       <div class="flex-align-center mt-9">攻略2：<WebLink title="[国服] [谈不上赚钱的生活技能]考古那些你还不知道的" url="https://bbs.nga.cn/read.php?tid=4395460" author="暗夜火" /></div>
@@ -28,7 +26,6 @@ const anchorParams = ref({
   },
   children: [
     { href: '#intro', title: '简介' },
-    { href: '#benifit', title: '收益' },
     { href: '#leveling', title: '攻略'},
   ]
 })
