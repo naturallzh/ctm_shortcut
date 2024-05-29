@@ -38,7 +38,7 @@
       
       <div class="title-1" id="cogwheelGem">工程齿轮</div>
       <div class="mt-9">点击条目以复制兑换物名称</div>
-      <div class="mt-9" v-for="item of cogwheelGemList"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.cost.name)">{{ item.str }}</span> <DatabaseNav class="mr-9" type="item" :id="item.id" :name="item.name" /><DatabaseNav type="spell" :id="item.cost.id" :name="item.cost.name" />*{{ item.cost.count }}</div>
+      <div class="mt-9" v-for="item of cogwheelGemList"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.cost.name)">{{ item.str }}</span> <DatabaseNav class="mr-18 ml-9" type="item" :id="item.id" :name="item.name" /><DatabaseNav type="spell" :id="item.cost.id" :name="item.cost.name" />*{{ item.cost.count }}</div>
       <div style="height: 36px;"></div>
     </div>
   </div>
