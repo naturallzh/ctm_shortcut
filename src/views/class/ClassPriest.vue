@@ -1,6 +1,6 @@
 <template>
   <div class="class-priest general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 牧师 页面
     </div>
   </div>

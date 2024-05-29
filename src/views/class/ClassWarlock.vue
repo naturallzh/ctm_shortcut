@@ -1,6 +1,6 @@
 <template>
   <div class="class-warlock general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 术士 页面
     </div>
   </div>

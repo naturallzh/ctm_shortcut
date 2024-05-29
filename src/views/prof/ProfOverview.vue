@@ -1,6 +1,6 @@
 <template>
   <div class="skill-overview general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       专业 - 总览 页面
     </div>
   </div>

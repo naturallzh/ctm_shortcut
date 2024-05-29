@@ -3,7 +3,7 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">制造专业，使用草药制作药水、药剂与合剂，通常与草药学配套</div>
+      <div class="mt-9 flex-align-center">制造专业，使用草药制作药水、药剂与合剂，通常与<RouterNav path="prof-herbalism" title="草药学" />配套</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="mt-9">专用无限小合剂: <DatabaseNav type="spell" :id="80724" name="增强合剂" class="mr-9" />收益为2个蓝色主属性宝石。吃普通合剂时有等值加成</div>
       <div class="mt-9">可以制造并使用炼金专用饰品: <DatabaseNav type="spell" :id="80508" name="生命炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96252" name="烈性炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96253" name="活泼炼金石" class="mr-9" /><DatabaseNav type="spell" :id="96254" name="活力炼金石" class="mr-9" /></div>
@@ -11,7 +11,7 @@
       <div class="mt-9">制造小队药锅: <DatabaseNav type="spell" :id="92643" name="战斗药锅" class="mr-9" />团队药锅: <DatabaseNav type="spell" :id="92688" name="大号战斗药锅" class="mr-9" /></div>
       <div class="mt-9">每日转化: <DatabaseNav type="spell" :id="78866" name="转化-生命元素" class="mr-9" /><DatabaseNav type="spell" :id="80243" name="转化-真金" class="mr-9" /></div>
       <div class="title-1" id="leveling">技能提升</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="mt-9">根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>同类配方极多，可根据情况替换</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] 好像很多人写炼金，那么我也来，炼金1-525攻略" url="https://bbs.nga.cn/read.php?tid=4317927" author="willforever" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
@@ -54,6 +54,7 @@ import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
 import WebLink from '@/components/WebLink.vue'
+import RouterNav from '@/components/RouterNav.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

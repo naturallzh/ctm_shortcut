@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown split-button size="small" type="primary" @click="handleOpenDrawerView">
+  <el-dropdown split-button size="small" type="primary" @click.stop="handleOpenDrawerView">
     {{ name }}
     <template #dropdown>
       <el-dropdown-menu>

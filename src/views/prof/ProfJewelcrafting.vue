@@ -3,11 +3,11 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">制造专业，使用珠宝原石和矿锭制造宝石、项链、戒指等，通常与采矿搭配</div>
+      <div class="mt-9 flex-align-center">制造专业，使用珠宝原石和矿锭制造宝石、项链、戒指等，通常与，通常与<RouterNav path="prof-mining" title="采矿" />配套搭配</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="mt-9">专用宝石:  可装备3颗<DatabaseNav type="spell" :id="73397" name="精致奇美拉之眼" />等使用<DatabaseNav type="item" :id="52196" name="奇美拉之眼" />制造的宝石，等效收益2颗蓝色宝石(全身蓝宝石时) / 1.25颗蓝色宝石(全身紫宝石时)</div>
       <div class="title-1" id="leveling">技能提升</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="mt-9">根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>切割宝石和项链/戒指制造存在大量同类配方，可根据情况替换</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] 珠宝1-525心得" url="https://bbs.nga.cn/read.php?tid=4320179" author="流浪的暮暮" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
@@ -44,6 +44,7 @@ import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
 import WebLink from '@/components/WebLink.vue'
+import RouterNav from '@/components/RouterNav.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

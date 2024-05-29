@@ -1,6 +1,6 @@
 <template>
   <div class="class-shaman general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 萨满 页面
     </div>
   </div>

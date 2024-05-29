@@ -1,6 +1,6 @@
 <template>
   <div class="class-overview general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 总览 页面
     </div>
   </div>

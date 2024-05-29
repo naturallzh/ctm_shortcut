@@ -1,6 +1,6 @@
 <template>
   <div class="raid-theBastionOfTwilight general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       团队副本 - 暮光堡垒 页面
     </div>
   </div>

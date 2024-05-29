@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import CommonOverview from '../views/common/CommonOverview.vue'
-import CommonItems from '../views/common/CommonItems.vue'
+import CommonDb from '../views/common/CommonDb.vue'
 import CommonAddons from '../views/common/CommonAddons.vue'
 import CommonMacros from '../views/common/CommonMacros.vue'
 import CommonFactions from '../views/common/CommonFactions.vue'
@@ -79,7 +79,7 @@ const router = createRouter({
       component: Home
     },
     { path: '/common-overview', name: 'common-overview', component: CommonOverview },
-    { path: '/common-items', name: 'common-items', component: CommonItems },
+    { path: '/common-db', name: 'common-db', component: CommonDb },
     { path: '/common-addons', name: 'common-addons', component: CommonAddons },
     { path: '/common-macros', name: 'common-macros', component: CommonMacros },
     { path: '/common-factions', name: 'common-factions', component: CommonFactions },

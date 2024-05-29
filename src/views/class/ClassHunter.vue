@@ -1,6 +1,6 @@
 <template>
   <div class="class-hunter general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 猎人 页面
     </div>
   </div>

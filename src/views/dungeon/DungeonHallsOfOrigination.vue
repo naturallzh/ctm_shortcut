@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-hallsOfOrigination general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 起源大厅 页面
     </div>
   </div>

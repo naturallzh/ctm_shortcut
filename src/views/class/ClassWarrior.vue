@@ -1,6 +1,6 @@
 <template>
   <div class="class-warrior general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 战士 页面
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-blackrockCaverns general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 黑石岩窟 页面
     </div>
   </div>

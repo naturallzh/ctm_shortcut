@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-wellOfEternity general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 永恒之井 页面
     </div>
   </div>

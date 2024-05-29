@@ -9,7 +9,7 @@
       <div class="mt-9">便宜魔线:  <DatabaseNav type="spell" :id="75154" name="大师魔线" class="mr-9" /><DatabaseNav type="spell" :id="75155" name="神圣魔线" class="mr-9" /></div>
       <div class="mt-9">披风附魔:  <DatabaseNav type="spell" :id="75175" name="黑光刺绣" class="mr-9" /><DatabaseNav type="spell" :id="75178" name="剑刃刺绣" class="mr-9" /><DatabaseNav type="spell" :id="75172" name="亮纹刺绣" class="mr-9" /></div>
       <div class="title-1" id="leveling">技能提升</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="mt-9">根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div class="flex-align-center">原帖地址：<WebLink title="​[御前比武大会]裁缝1-525" url="https://bbs.nga.cn/read.php?tid=4330970" author="暗之魔妃" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
       <div class="mt-9 flex-align-center">

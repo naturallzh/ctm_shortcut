@@ -1,6 +1,6 @@
 <template>
   <div class="common-outfits general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       常用 - 套装 页面
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="raid-throneOfTheFourWinds general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       团队副本 - 风神王座 页面
     </div>
   </div>

@@ -67,11 +67,15 @@
 
 <script setup>
 import utils from '@/utils/index'
-import { ref } from 'vue'
-import { RouterLink, RouterView, useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
+import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
 const router = useRouter();
+const route = useRoute();
 
-const curRoute = location.pathname.slice(1) || 'home'
+const curRoute = ref('')
+watch(route, (val) => {
+  curRoute.value = val?.path?.slice(1) || 'home'
+})
 
 const changeRoute = (path) => {
   router.push({path})
@@ -80,7 +84,7 @@ const changeRoute = (path) => {
 const menuItems = {
   common: [
     { id: 'common-overview', name: '总览' },
-    { id: 'common-items', name: '物品' },
+    { id: 'common-db', name: '数据库' },
     { id: 'common-addons', name: '插件' },
     { id: 'common-macros', name: '宏' },
     { id: 'common-factions', name: '声望' },

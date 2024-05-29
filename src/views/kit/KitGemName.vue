@@ -26,19 +26,19 @@
       </div>
 
       <div class="title-1" id="metaGem">多彩宝石</div>
-      <div class="mt-9">点击条目以复制珠宝名称</div>
+      <div class="mt-9">点击条目以复制珠宝名称；后面带颜色的数字表示需要多少颗该颜色的宝石才能触发多彩效果</div>
       <div class="mt-9 fw-b">力量 / 敏捷</div>
-      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[0]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9" v-for="item of metaGemList[0]"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.name)">{{ item.str }}</span> <span v-for="(req, idx) of item.req" :class="'clr-'+idx" class="underline" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
       <div class="mt-9 fw-b">智力</div>
-      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[1]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9" v-for="item of metaGemList[1]"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.name)">{{ item.str }}</span> <span v-for="(req, idx) of item.req" :class="'clr-'+idx" class="underline" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
       <div class="mt-9 fw-b">耐力</div>
-      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[2]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9" v-for="item of metaGemList[2]"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.name)">{{ item.str }}</span> <span v-for="(req, idx) of item.req" :class="'clr-'+idx" class="underline" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
       <div class="mt-9 fw-b">其他副属性</div>
-      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.name)" v-for="item of metaGemList[3]">{{ item.str }} 需要<span v-for="(req, idx) of item.req" :class="'clr-'+idx" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
+      <div class="mt-9" v-for="item of metaGemList[3]"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.name)">{{ item.str }}</span> <span v-for="(req, idx) of item.req" :class="'clr-'+idx" class="underline" v-show="req">{{ req }}</span><DatabaseNav type="spell" :id="item.id" :name="item.name" /></div>
       
       <div class="title-1" id="cogwheelGem">工程齿轮</div>
       <div class="mt-9">点击条目以复制兑换物名称</div>
-      <div class="mt-9" style="cursor: pointer;" @click="utils.copyToclipboard(item.cost.name)" v-for="item of cogwheelGemList">{{ item.str }} <DatabaseNav class="mr-9" type="item" :id="item.id" :name="item.name" /><DatabaseNav type="spell" :id="item.cost.id" :name="item.cost.name" />*{{ item.cost.count }}</div>
+      <div class="mt-9" v-for="item of cogwheelGemList"><span style="cursor: pointer;" @click="utils.copyToclipboard(item.cost.name)">{{ item.str }}</span> <DatabaseNav class="mr-9" type="item" :id="item.id" :name="item.name" /><DatabaseNav type="spell" :id="item.cost.id" :name="item.cost.name" />*{{ item.cost.count }}</div>
       <div style="height: 36px;"></div>
     </div>
   </div>

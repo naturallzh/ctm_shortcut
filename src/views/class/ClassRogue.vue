@@ -1,6 +1,6 @@
 <template>
   <div class="class-rogue general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       职业 - 盗贼 页面
     </div>
   </div>

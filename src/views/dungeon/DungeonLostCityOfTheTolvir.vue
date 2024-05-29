@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-lostCityOfTheTolvir general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 托维尔失落之城 页面
     </div>
   </div>

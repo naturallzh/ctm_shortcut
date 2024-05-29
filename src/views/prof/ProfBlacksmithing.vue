@@ -3,12 +3,12 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="intro">简介</div>
-      <div class="mt-9">制造专业，使用矿锭制造板甲与武器，通常与采矿搭配</div>
+      <div class="mt-9 flex-align-center">制造专业，使用矿锭制造板甲与武器，通常与<RouterNav path="prof-mining" title="采矿" />搭配</div>
       <div class="title-1" id="benifit">收益</div>
       <div class="mt-9">商业出售:  <DatabaseNav type="spell" :id="76439" name="乌钢带扣" class="mr-9" /></div>
       <div class="mt-9">装备打孔:  <DatabaseNav type="spell" :id="55628" name="护腕插槽" class="mr-9" /><DatabaseNav type="spell" :id="55641" name="手套插槽" class="mr-9" />额外收益最大等效2颗紫色宝石</div>
       <div class="title-1" id="leveling">技能提升</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="mt-9">根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>阶段划分比较粗略，替换配方较多，建议多权衡</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[专业技能] [4.3.3]锻造1-525攻略^_^~" url="https://bbs.nga.cn/read.php?tid=5022208" author="显蕨" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>
@@ -62,6 +62,7 @@ import DatabaseNav from '@/components/DatabaseNav.vue'
 import ProfSkillLevelStep from '@/components/ProfSkillLevelStep.vue'
 import ProfSkillLevelItem from '@/components/ProfSkillLevelItem.vue'
 import WebLink from '@/components/WebLink.vue'
+import RouterNav from '@/components/RouterNav.vue'
 
 const containerRef = ref(null)
 const anchorParams = ref({

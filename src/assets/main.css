@@ -82,6 +82,8 @@ html, body {
 
 .fs-i {font-style: italic;}
 
+.underline {text-decoration: underline;}
+
 .flex-align-center {
   display: flex;
   align-items: center;

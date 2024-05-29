@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-hourOfTwilight general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 暮光审判 页面
     </div>
   </div>

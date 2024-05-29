@@ -1,6 +1,6 @@
 <template>
   <div class="dungeon-theVortexPinnacle general-conainer">
-    <div class="content general-content">
+    <div class="content general-inner">
       5人本 - 旋云之巅 页面
     </div>
   </div>

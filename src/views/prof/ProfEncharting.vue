@@ -7,7 +7,7 @@
       <div class="title-1" id="benifit">收益</div>
       <div class="mt-9">戒指附魔:  <DatabaseNav type="spell" :id="74215" name="附魔戒指-力量" class="mr-9" /><DatabaseNav type="spell" :id="74216" name="附魔戒指-敏捷" class="mr-9" /><DatabaseNav type="spell" :id="74217" name="附魔戒指-智力" class="mr-9" /><DatabaseNav type="spell" :id="74218" name="附魔戒指-强效耐力" class="mr-9" />额外收益等效2颗蓝色宝石</div>
       <div class="title-1" id="leveling">技能提升</div>
-      <div>根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
+      <div class="mt-9">根据不同的实际情况，冲级所用材料和成本与攻略可能会有一定出入，可自行调整</div>
       <div>附魔棒额外材料：银棒*1 金棒*1 彩色珍珠*1 真银棒*1 黑珍珠*1 奥金棒*1 魔铁棒*1 精金棒*1 恒金棒*1 泰坦神铁棒*1 源质棒*1</div>
       <div class="flex-align-center">原帖地址：<WebLink title="[御前比武大会] 附魔1-525心得" url="https://bbs.nga.cn/read.php?tid=4321214" author="vivid_lai" /></div>
       <div class="title-2" id="leveling-shortcut">捷径配方</div>

@@ -1,22 +1,7 @@
 <template>
   <div class="common-overview general-conainer">
-    <div class="content general-content">
-      <div style="margin-top: 36px;width: 100%;padding: 18px; border: 3px solid white;box-sizing: border-box;">
-        <div style="font-size: 30px;margin-bottom: 18px">数据库</div>
-        <el-button type="primary" @click="gotoUrl('http://db.nfuwow.com/85/?items')">装备</el-button>
-        <el-button type="primary" @click="gotoUrl('https://www.nfuwow.com/talents/85/')">天赋模拟器</el-button>
-      </div>
-      <div style="margin-top: 36px;width: 100%;padding: 18px; border: 3px solid white;box-sizing: border-box;">
-        <div style="font-size: 30px;margin-bottom: 18px">测试1(无内容)</div>
-        <el-button>测试1-1</el-button>
-        <el-button>测试1-2</el-button>
-      </div>
-      <div style="margin-top: 36px;width: 100%;padding: 18px; border: 3px solid white;box-sizing: border-box;">
-        <div style="font-size: 30px;margin-bottom: 18px">测试2(无内容)</div>
-        <el-button>测试2-1</el-button>
-        <el-button>测试2-2</el-button>
-        <el-button>测试2-3</el-button>
-      </div>
+    <div class="content general-inner">
+      常用 - 总览 页面
     </div>
   </div>
 </template>
