@@ -38,6 +38,7 @@
 <script setup>
 import { ref } from 'vue'
 import utils from '@/utils'
+import { ElMessage } from 'element-plus'
 
 const dbSearchVal = ref('')
 const getDbSearchUrl = (target) => {
@@ -51,6 +52,13 @@ const getDbSearchUrl = (target) => {
   }
 }
 const handleOpenDbSearchWindow = (target) => {
+  if (!dbSearchVal.value) {
+    ElMessage({
+      message: '请输入搜索内容',
+      type: 'error',
+    })
+    return
+  }
   utils.openUrl(getDbSearchUrl(target))
 }
 
