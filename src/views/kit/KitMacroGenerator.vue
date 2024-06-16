@@ -3,7 +3,7 @@
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
       <div class="title-1" id="conditionSpell">条件施法 (多技能合一)</div>
-      <div class="mt-9">每个条件组中的条件需同时满足，该条件组才会被判定为生效</div>
+      <div class="mt-9">每个条件组中的条件需同时满足，该条件组才会被判定为生效 (不要同时选择"死亡"与"非死亡"，其他同理)</div>
       <div class="mt-9">多个条件组之间只要有一个条件组生效，则技能即被判定触发</div>
       <div class="mt-9">只要技能被判定为触发，宏即终止</div>
       <div class="mt-9">图标显示留空时，自动从施放部分继承对应技能显示(包括冷却、距离等)，但鼠标移动到图标上看不到详情</div>
