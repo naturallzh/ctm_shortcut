@@ -19,11 +19,11 @@
           </div>
           <div v-for="(conditionItem, conditionIdx) of spellItem.condition" class="mt-9">
             组合键
-            <el-select v-model="conditionItem.mod" placeholder="无组合键" style="width: 100px" clearable filterable class="mr-9">
+            <el-select v-model="conditionItem.mod" placeholder="无视组合键" style="width: 120px" clearable filterable class="mr-9">
               <el-option v-for="opt in conditionSpellOps.mod" :key="opt.value" :label="opt.label" :value="opt.value"/>
             </el-select>
             玩家状态
-            <el-select v-model="conditionItem.status" placeholder="无条件" style="width: 270px" clearable multiple filterable class="mr-9">
+            <el-select v-model="conditionItem.status" placeholder="无条件" style="width: 260px" clearable multiple filterable class="mr-9">
               <el-option-group v-for="optGroup in conditionSpellOps.status" :label="optGroup.label" :key="optGroup.label">
                 <el-option v-for="opt in optGroup.options" :key="opt.value" :label="opt.label" :value="opt.value"/>
               </el-option-group>
@@ -33,7 +33,7 @@
               <el-option v-for="opt in conditionSpellOps.target" :key="opt.value" :label="opt.label" :value="opt.value"/>
             </el-select>
             作用目标状态
-            <el-select v-model="conditionItem.targetStatus" placeholder="无条件" style="width: 270px" clearable multiple filterable class="mr-18">
+            <el-select v-model="conditionItem.targetStatus" placeholder="无条件" style="width: 260px" clearable multiple filterable class="mr-18">
               <el-option-group v-for="optGroup in conditionSpellOps.targetStatus" :label="optGroup.label" :key="optGroup.label">
                 <el-option v-for="opt in optGroup.options" :key="opt.value" :label="opt.label" :value="opt.value"/>
               </el-option-group>
@@ -80,7 +80,7 @@ const conditionSpellData = reactive({
 })
 const conditionSpellStr = ref('')
 const conditionSpellOps = {
-  mod: [{value: 'mod:shift', label: 'shift'}, {value: 'mod:ctrl', label: 'ctrl'}, {value: 'mod:alt', label: 'alt'}],
+  mod: [{value: 'nomod', label: '无组合键时'}, {value: 'mod', label: '任意组合键'}, {value: 'mod:shift', label: 'shift'}, {value: 'mod:ctrl', label: 'ctrl'}, {value: 'mod:alt', label: 'alt'}],
   status: [
     {label: '是否在战斗中', options: [{value: 'combat', label: '在战斗中'}, {value: 'nocombat', label: '不在战斗中'}]},
     {label: '是否引导中', options: [{value: 'channeling', label: '引导中'}, {value: 'nochanneling', label: '不在引导中'}]},

@@ -2,14 +2,37 @@
   <div class="kit-gem general-conainer" ref="containerRef">
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
-      <div class="title-1" id="gem">普通宝石</div>
+      <div class="title-1" id="gem">普通宝石(WLK)</div>
+      <div class="mt-9">选择一种属性后查看匹配结果</div>
+      <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
+      <div class="mt-18 gem-radio-group" :class="index" v-for="(colorGroup, index) of nameSearchOptionsWLK">
+        <div class="gem-item" v-for="item of colorGroup">
+          <div><el-radio v-model="nameSearchValWLK" :value="item.value" style="color: white;" @change="handleSearchChangeWLK">{{ item.label }}</el-radio></div>
+          <div style="height: 28px;">
+            <el-popover placement="right" width="495px">
+              <template #reference>
+                <el-button v-show="item.res" size="large" style="color: wheat;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName)">{{ item.res?.statName }}</el-button>
+              </template>
+              <div style="display: flex;">
+                <div class="mr-18">{{ item.res?.statStr }}</div>
+                <div style="display: flex;flex-direction: column;" v-for="spec of [0, 1, 2]" class="mr-18">
+                  <el-button size="large" style="color: black;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName + gemStoneWLK[item.res?.color||'Red'][spec])">{{ item.res?.statName + gemStoneWLK[item.res?.color||'Red'][spec] }}</el-button>
+                  <span>{{ gemStatValWLK[item.res?.statValType||0][spec] }}</span>
+                </div>
+              </div>
+            </el-popover>
+          </div>
+        </div>
+      </div>
+
+      <div class="title-1" id="gem">普通宝石(CTM)</div>
       <div class="mt-9">选择一种属性后查看匹配结果</div>
       <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
       <div class="mt-18 gem-radio-group" :class="index" v-for="(colorGroup, index) of nameSearchOptions">
         <div class="gem-item" v-for="item of colorGroup">
           <div><el-radio v-model="nameSearchVal" :value="item.value" style="color: white;" @change="handleSearchChange">{{ item.label }}</el-radio></div>
           <div style="height: 28px;">
-            <el-popover placement="right" width="460px">
+            <el-popover placement="right" width="495px">
               <template #reference>
                 <el-button v-show="item.res" size="large" style="color: wheat;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName)">{{ item.res?.statName }}</el-button>
               </template>
@@ -56,11 +79,162 @@ const anchorParams = ref({
     container: containerRef
   },
   children: [
-    { href: '#gem', title: '普通宝石' },
+    { href: '#gemWLK', title: '普通宝石(WLK)' },
+    { href: '#gem', title: '普通宝石(CTM)' },
     { href: '#metaGem', title: '多彩宝石' },
     { href: '#cogwheelGem', title: '工程齿轮' },
   ]
 })
+
+const nameSearchValWLK = ref('')
+const nameSearchOptionsWLK = ref({
+  red: [
+    { value: 'Str', label: '力量' },
+    { value: 'Agi', label: '敏捷' },
+    { value: 'PENE', label: '破甲' },
+    { value: 'SP', label: '法强' },
+    { value: 'AP', label: '攻强' },
+    { value: 'Parry', label: '精准' },
+    { value: 'Pre', label: '招架' },
+    { value: 'Dodge', label: '躲闪' },
+  ],
+  yellow: [
+    { value: 'Crit', label: '暴击' },
+    { value: 'Haste', label: '急速' },
+    { value: 'Hit', label: '命中' },
+    { value: 'Def', label: '防等' },
+    { value: 'Int', label: '智力' },
+    { value: 'Res', label: '韧性' },
+  ],
+  blue: [
+    { value: 'Sta', label: '耐力' },
+    { value: 'Spi', label: '精神' },
+    { value: 'MP5', label: '五回' },
+    { value: 'Pene', label: '法穿' },
+  ]
+})
+const gemStatValWLK = [
+  ['12', '16', '20'],  // 0
+  ['6/6', '8/8', '10/10'],  // 1
+  ['24', '32', '40'],  // 2 攻强
+  ['14', '19', '23'],  // 3 法强
+  ['18', '24', '30'],  // 4 耐力
+  ['15', '20', '25'],  // 5 法穿
+  ['6', '8', '10'],  // 6 五回
+  ['6/9', '8/12', '10/15'],  // 7
+  ['7/9', '9/12', '12/15'],  // 8
+  ['12/9', '16/12', '20/15'],  // 9
+  ['7/6', '9/8', '12/10'],  // 10
+  ['7/3', '9/4', '12/5'],  // 11
+  ['6/3', '8/4', '10/5'],  // 12
+  ['12/3', '16/4', '20/5'],  // 13
+  ['7/8', '9/10', '12/13'],  // 14
+  ['12/6', '16/8', '20/10'],  // 15
+  ['6/8', '8/10', '10/13'],  // 16
+]
+const gemStatDataListWLK = [
+  { color: 'Red', stat: 'StrStr', statStr: '力量', statValType: 0, statName: '朴素' },
+  { color: 'Red', stat: 'AgiAgi', statStr: '敏捷', statValType: 0, statName: '精致' },
+  { color: 'Red', stat: 'PENEPENE', statStr: '破甲', statValType: 0, statName: '断裂' },
+  { color: 'Red', stat: 'SPSP', statStr: '法强', statValType: 3, statName: '符文' },
+  { color: 'Red', stat: 'APAP', statStr: '攻强', statValType: 2, statName: '明亮' },
+  { color: 'Red', stat: 'ParryParry', statStr: '精准', statValType: 0, statName: '精准' },
+  { color: 'Red', stat: 'PrePre', statStr: '招架', statValType: 0, statName: '闪光' },
+  { color: 'Red', stat: 'DodgeDodge', statStr: '躲闪', statValType: 0, statName: '诡秘' },
+
+  { color: 'Blue', stat: 'StaSta', statStr: '耐力', statValType: 4, statName: '致密' },
+  { color: 'Blue', stat: 'SpiSpi', statStr: '精神', statValType: 0, statName: '火花' },
+  { color: 'Blue', stat: 'MP5MP5', statStr: '五回', statValType: 6, statName: '异彩' },
+  { color: 'Blue', stat: 'PenePene', statStr: '法穿', statValType: 5, statName: '风暴' },
+
+  { color: 'Yellow', stat: 'CritCrit', statStr: '暴击', statValType: 0, statName: '圆润' },
+  { color: 'Yellow', stat: 'HasteHaste', statStr: '急速', statValType: 0, statName: '迅捷' },
+  { color: 'Yellow', stat: 'HitHit', statStr: '命中', statValType: 0, statName: '刚硬' },
+  { color: 'Yellow', stat: 'IntInt', statStr: '智力', statValType: 0, statName: '闪耀' },
+  { color: 'Yellow', stat: 'DefDef', statStr: '防等', statValType: 0, statName: '厚重' },
+  { color: 'Yellow', stat: 'ResRes', statStr: '韧性', statValType: 0, statName: '秘法' },
+
+  { color: 'Purple', stat: 'StrSta', statStr: '力量耐力', statValType: 7, statName: '统御' },
+  { color: 'Purple', stat: 'AgiSta', statStr: '敏捷耐力', statValType: 7, statName: '狡诈' },
+  { color: 'Purple', stat: 'SPSta', statStr: '法强耐力', statValType: 8, statName: '炽热' },
+  { color: 'Purple', stat: 'APSta', statStr: '攻强耐力', statValType: 9, statName: '平衡' },
+  { color: 'Purple', stat: 'PENESta', statStr: '破甲耐力', statValType: 7, statName: '强攻' },
+  { color: 'Purple', stat: 'SPSpi', statStr: '法强精神', statValType: 10, statName: '纯净' },
+  { color: 'Purple', stat: 'SPMP5', statStr: '法强五回', statValType: 11, statName: '皇家' },
+  { color: 'Purple', stat: 'PreSta', statStr: '招架耐力', statValType: 7, statName: '防御者的' },
+  { color: 'Purple', stat: 'DodgeSta', statStr: '躲闪耐力', statValType: 7, statName: '华丽' },
+  { color: 'Purple', stat: 'ParrySta', statStr: '精准耐力', statValType: 7, statName: '守护者的' },
+  { color: 'Purple', stat: 'AgiMP5', statStr: '敏捷五回', statValType: 12, statName: '纤细' },
+  { color: 'Purple', stat: 'APMP5', statStr: '攻强五回', statValType: 13, statName: '充能' },  
+  { color: 'Purple', stat: 'SPPene', statStr: '法强法穿', statValType: 14, statName: '神秘' },
+
+  { color: 'Orange', stat: 'AgiCrit', statStr: '敏捷暴击', statValType: 1, statName: '致命' },
+  { color: 'Orange', stat: 'ParryDef', statStr: '精准防等', statValType: 1, statName: '坚毅' },
+  { color: 'Orange', stat: 'SPCrit', statStr: '法强暴击', statValType: 10, statName: '高能' },
+  { color: 'Orange', stat: 'StrCrit', statStr: '力量暴击', statValType: 1, statName: '铭文' },
+  { color: 'Orange', stat: 'DodgeDef', statStr: '躲闪防等', statValType: 1, statName: '坚韧' },
+  { color: 'Orange', stat: 'StrDef', statStr: '力量防等', statValType: 1, statName: '勇士的' },
+  { color: 'Orange', stat: 'AgiHaste', statStr: '敏捷急速', statValType: 1, statName: '轻巧' },
+  { color: 'Orange', stat: 'SPHaste', statStr: '法强急速', statValType: 10, statName: '鲁莽' },
+  { color: 'Orange', stat: 'StrHaste', statStr: '力量急速', statValType: 1, statName: '凶猛' },
+  { color: 'Orange', stat: 'AgiRes', statStr: '敏捷韧性', statValType: 1, statName: '透明' },
+  { color: 'Orange', stat: 'APRes', statStr: '攻强韧性', statValType: 15, statName: '增效' },
+  { color: 'Orange', stat: 'SPRes', statStr: '法强韧性', statValType: 10, statName: '耐久' },
+  { color: 'Orange', stat: 'StrRes', statStr: '力量韧性', statValType: 1, statName: '灿烂' },
+  { color: 'Orange', stat: 'AgiHit', statStr: '敏捷命中', statValType: 1, statName: '反光' },
+  { color: 'Orange', stat: 'ParryHit', statStr: '精准命中', statValType: 1, statName: '精确' },
+  { color: 'Orange', stat: 'SPHit', statStr: '法强命中', statValType: 10, statName: '隐秘' },
+  { color: 'Orange', stat: 'APHit', statStr: '攻强命中', statValType: 15, statName: '原始' },
+  { color: 'Orange', stat: 'StrHit', statStr: '力量命中', statValType: 1, statName: '蚀刻' },
+  { color: 'Orange', stat: 'APHaste', statStr: '攻强急速', statValType: 15, statName: '荒凉' },
+  { color: 'Orange', stat: 'APCrit', statStr: '攻强暴击', statValType: 15, statName: '邪恶' },
+  { color: 'Orange', stat: 'SPInt', statStr: '法强智力', statValType: 10, statName: '辉光' },
+  { color: 'Orange', stat: 'PreDef', statStr: '招架防等', statValType: 1, statName: '黯光' },
+
+  { color: 'Green', stat: 'SpiCrit', statStr: '精神暴击', statValType: 1, statName: '迷雾' },
+  { color: 'Green', stat: 'IntSpi', statStr: '智力精神', statValType: 1, statName: '先知的' },
+  { color: 'Green', stat: 'HitSpi', statStr: '命中精神', statValType: 1, statName: '辉煌' },
+  { color: 'Green', stat: 'IntMP5', statStr: '智力五回', statValType: 12, statName: '炫光' },
+  { color: 'Green', stat: 'CritMP5', statStr: '暴击五回', statValType: 12, statName: '碎裂' },
+  { color: 'Green', stat: 'HitMP5', statStr: '命中五回', statValType: 12, statName: '烁光' },
+  { color: 'Green', stat: 'HasteMP5', statStr: '急速五回', statValType: 12, statName: '活跃' },
+  { color: 'Green', stat: 'ResMP5', statStr: '韧性五回', statValType: 12, statName: '晦暗' },
+  { color: 'Green', stat: 'SpiRes', statStr: '精神韧性', statValType: 1, statName: '混沌' },
+  { color: 'Green', stat: 'HasteSpi', statStr: '急速精神', statValType: 1, statName: '复杂' },
+  { color: 'Green', stat: 'CritSta', statStr: '暴击耐力', statValType: 7, statName: '裂纹' },
+  { color: 'Green', stat: 'HitSta', statStr: '命中耐力', statValType: 7, statName: '鲜艳' },
+  { color: 'Green', stat: 'HasteSta', statStr: '急速耐力', statValType: 7, statName: '坚强' },
+  { color: 'Green', stat: 'DefSta', statStr: '防等耐力', statValType: 7, statName: '坚硬' },
+  { color: 'Green', stat: 'HitPene', statStr: '命中法穿', statValType: 16, statName: '焦虑' },
+  { color: 'Green', stat: 'CritPene', statStr: '暴击法穿', statValType: 16, statName: '辐光' },
+  { color: 'Green', stat: 'HastePene', statStr: '急速法穿', statValType: 16, statName: '破碎' },
+  { color: 'Green', stat: 'IntSta', statStr: '智力耐力', statValType: 7, statName: '永恒' },
+  { color: 'Green', stat: 'ResSta', statStr: '韧性耐力', statValType: 7, statName: '稳固' },
+]
+const gemStoneWLK = {
+  Red: ['血石', '血玉石', '赤玉石'],
+  Blue: ['玉髓石', '天蓝石', '巨镐石'],
+  Yellow: ['太阳水晶', '秋色石', '王者琥珀'],
+  Purple: ['暗影水晶', '曙光猫眼石', '恐惧石'],
+  Orange: ['茶晶石', '帝黄晶', '紫黄晶'],
+  Green: ['黑玉', '森林翡翠', '祖尔之眼']
+}
+const getGemWLK = (stat) => {
+  if (!nameSearchValWLK.value) { return false }
+  for (const item of gemStatDataListWLK) {
+    if ((item.stat === nameSearchValWLK.value + stat) || (item.stat === stat + nameSearchValWLK.value)) {
+      return item
+    }
+  }
+  return false
+}
+const handleSearchChangeWLK = (val) => {
+  for (const color of ['red', 'yellow', 'blue']) {
+    for (const item of nameSearchOptionsWLK.value[color]) {
+      item.res = getGemWLK(item.value)
+    }
+  }
+}
 
 const nameSearchVal = ref('')
 const nameSearchOptions = ref({
@@ -119,9 +293,9 @@ const gemStatDataList = [
   { color: 'Purple', stat: 'IntSpi', statStr: '智力精神', statValType: 1, statName: '纯净' },
   { color: 'Purple', stat: 'StrSta', statStr: '力量耐力', statValType: 2, statName: '统御' },
   { color: 'Purple', stat: 'AgiSta', statStr: '敏捷耐力', statValType: 2, statName: '狡诈' },
-  { color: 'Purple', stat: 'ParrySta', statStr: '精准耐力', statValType: 2, statName: '守护者' },
+  { color: 'Purple', stat: 'ParrySta', statStr: '精准耐力', statValType: 2, statName: '守护者的' },
   { color: 'Purple', stat: 'IntSta', statStr: '智力耐力', statValType: 2, statName: '永恒' },
-  { color: 'Purple', stat: 'PreSta', statStr: '招架耐力', statValType: 2, statName: '防御者' },
+  { color: 'Purple', stat: 'PreSta', statStr: '招架耐力', statValType: 2, statName: '防御者的' },
   { color: 'Purple', stat: 'IntPene', statStr: '智力法穿', statValType: 3, statName: '神秘' },
 
   { color: 'Orange', stat: 'AgiCrit', statStr: '敏捷暴击', statValType: 1, statName: '致命' },
