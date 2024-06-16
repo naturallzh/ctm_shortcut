@@ -9,7 +9,7 @@
         <div class="gem-item" v-for="item of colorGroup">
           <div><el-radio v-model="nameSearchValWLK" :value="item.value" style="color: white;" @change="handleSearchChangeWLK">{{ item.label }}</el-radio></div>
           <div style="height: 28px;">
-            <el-popover placement="right" width="495px">
+            <el-popover placement="right" width="510px">
               <template #reference>
                 <el-button v-show="item.res" size="large" style="color: wheat;text-shadow: 0 0 2px skyblue" link type="info" @click="utils.copyToclipboard(item.res?.statName)">{{ item.res?.statName }}</el-button>
               </template>
