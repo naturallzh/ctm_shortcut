@@ -92,8 +92,8 @@ const nameSearchOptionsWLK = ref({
     { value: 'Str', label: '力量' },
     { value: 'Agi', label: '敏捷' },
     { value: 'PENE', label: '破甲' },
-    { value: 'SP', label: '法强' },
     { value: 'AP', label: '攻强' },
+    { value: 'SP', label: '法强' },
     { value: 'Parry', label: '精准' },
     { value: 'Pre', label: '招架' },
     { value: 'Dodge', label: '躲闪' },
@@ -213,7 +213,7 @@ const gemStatDataListWLK = [
 ]
 const gemStoneWLK = {
   Red: ['血石', '血玉石', '赤玉石'],
-  Blue: ['玉髓石', '天蓝石', '巨镐石'],
+  Blue: ['玉髓石', '天蓝石', '巨锆石'],
   Yellow: ['太阳水晶', '秋色石', '王者琥珀'],
   Purple: ['暗影水晶', '曙光猫眼石', '恐惧石'],
   Orange: ['茶晶石', '帝黄晶', '紫黄晶'],
