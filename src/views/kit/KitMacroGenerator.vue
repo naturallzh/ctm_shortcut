@@ -38,7 +38,7 @@
                 <el-option v-for="opt in optGroup.options" :key="opt.value" :label="opt.label" :value="opt.value"/>
               </el-option-group>
             </el-select>
-            <el-popconfirm title="是否删除该条件？" width="200px" @confirm="handleAddCondition(slot, spellIdx, conditionIdx)">
+            <el-popconfirm title="是否删除该条件组？" width="200px" @confirm="handleAddCondition(slot, spellIdx, conditionIdx)">
               <template #reference>
                 <el-button type="danger" circle><el-icon><Delete /></el-icon></el-button>
               </template>
