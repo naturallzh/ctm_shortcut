@@ -15,7 +15,7 @@
 <script setup>
 import utils from '@/utils/index'
 import { useRoute } from 'vue-router'
-import { ref, defineExpose, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import SubAnchorLink from './SubAnchorLink.vue'
 const route = useRoute();
 

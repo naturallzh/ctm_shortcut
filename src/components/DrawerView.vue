@@ -14,7 +14,7 @@
 
 <script setup>
 import utils from '@/utils/index'
-import { ref, defineExpose, nextTick } from 'vue'
+import { ref, nextTick } from 'vue'
 
 const props = defineProps(['url'])
 
