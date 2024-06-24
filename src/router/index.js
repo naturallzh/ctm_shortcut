@@ -67,7 +67,7 @@ import KitMacroGenerator from '../views/kit/KitMacroGenerator.vue'
 
 const router = createRouter({
   // history: createWebHashHistory(import.meta.env.BASE_URL),
-  history: createWebHistory('/ctm'),
+  history: createWebHistory('/ctm_shortcut'),
   routes: [
     {
       path: '/',
