@@ -2,7 +2,7 @@
   <div class="kit-gem general-conainer" ref="containerRef">
     <div class="inner general-inner">
       <Anchor class="general-anchor" :anchor-params="anchorParams"></Anchor>
-      <div class="title-1" id="gem">普通宝石(WLK)</div>
+      <div class="title-1" id="gemWLK">普通宝石(WLK)</div>
       <div class="mt-9">选择一种属性后查看匹配结果</div>
       <div class="mt-9">点击宝石前缀或完整名称以复制内容到剪贴板</div>
       <div class="mt-18 gem-radio-group" :class="index" v-for="(colorGroup, index) of nameSearchOptionsWLK">
