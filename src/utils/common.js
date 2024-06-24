@@ -12,7 +12,16 @@ const openUrl = (url, target = '_blank') => {
   window.open(url, target)
 }
 
+const addZero = (num) => {
+  if (num < 0 || num > 9) {
+    return `${num}`
+  } else {
+    return `0${num}`
+  }
+}
+
 export default {
   copyToclipboard,
-  openUrl
+  openUrl,
+  addZero,
 }

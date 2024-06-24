@@ -1,12 +1,37 @@
-<script setup>
-</script>
-
 <template>
   <div class="home">
-    <span>2024-4-10 官宣国服回归</span>
-    <span>Enjoy!</span>
+    <span class="fs-50 mb-18 fw-b">距离国服回归还有</span>
+    <span class="fs-100 mb-12" style="font-family:Comic Sans MS;">{{ countdownStr }}</span>
+    <span class="fs-36 mb-25 fw-b">以 2024-06-27 06:00:00 预估</span>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import utils from '@/utils'
+
+const timer = ref()
+const countdownStr = ref('')
+const getCountdownStr = () => {
+  let delta = Math.ceil((new Date(2024,5,27,6) - new Date()) / 1000)
+  const h = utils.addZero(Math.floor(delta / 3600))
+  delta -= h * 3600
+  const m = utils.addZero(Math.floor(delta / 60))
+  delta -= m * 60
+  const s = utils.addZero(Math.floor(delta))
+  countdownStr.value = `${h}:${m}:${s}`
+}
+getCountdownStr()
+
+onMounted(() => {
+  timer.value = setInterval(()=> {
+    getCountdownStr()
+  }, 100)
+})
+onBeforeUnmount(() => {
+  clearInterval(timer.value)
+})
+</script>
 
 <style lang="scss" scoped>
 .home {
@@ -14,12 +39,14 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-top: 10%;
+  box-sizing: border-box;
   flex-direction: column;
-  span {
+  .fs-50 {
     font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 18px
+  }
+  .fs-100 {
+    font-size: 100px;
   }
 }
 </style>
