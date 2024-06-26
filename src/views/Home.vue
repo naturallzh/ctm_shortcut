@@ -14,6 +14,10 @@ const timer = ref()
 const countdownStr = ref('')
 const getCountdownStr = () => {
   let delta = Math.ceil((new Date(2024,5,27,6) - new Date()) / 1000)
+  if (delta <=0 ) {
+    countdownStr.value = '00:00:00'
+    return
+  }
   const h = utils.addZero(Math.floor(delta / 3600))
   delta -= h * 3600
   const m = utils.addZero(Math.floor(delta / 60))
