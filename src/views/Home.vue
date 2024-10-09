@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <span class="fs-50 mb-18 fw-b">距离国服回归还有</span>
-    <span class="fs-100 mb-12" style="font-family:Comic Sans MS;">{{ countdownStr }}</span>
-    <span class="fs-36 mb-25 fw-b">以 2024-06-27 06:00:00 预估</span>
+    <span class="fs-50 mb-18 fw-b">快乐咸鱼每一天</span>
+    <!-- <span class="fs-100 mb-12" style="font-family:Comic Sans MS;">{{ countdownStr }}</span>
+    <span class="fs-36 mb-25 fw-b">以 2024-06-27 06:00:00 预估</span> -->
   </div>
 </template>
 
